@@ -6,7 +6,7 @@
 # BasicExample
 cd BasicExample
 sbt docker
-sbt docker:publishLocal
+docker run -d --restart=always sbtdocker/basic-example
 ```
 
 ```bash
