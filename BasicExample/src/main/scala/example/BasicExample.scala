@@ -11,5 +11,13 @@ object BasicExample extends App {
   for (i <- 1 to 10)
     println (i)
 
+  var x = 0
+
+  while (true){
+    println (x)
+    Thread.sleep(1000)
+    x += 1
+  }
+
   println("Application exiting")
 }

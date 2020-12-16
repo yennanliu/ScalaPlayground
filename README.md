@@ -3,7 +3,8 @@
 
 ## Quick Start
 ```bash
-# build 
+# BasicExample
+cd BasicExample
 sbt docker:publishLocal
 ```
 

@@ -6,3 +6,5 @@
 BasicExample/project/project/target/*
 BasicExample/project/target/*
 BasicExample/target/*
+BasicExample/.idea/
+BasicExample/.bsp/
