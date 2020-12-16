@@ -5,7 +5,15 @@
 ```bash
 # BasicExample
 cd BasicExample
+sbt docker
 sbt docker:publishLocal
+```
+
+```bash
+# akkahttp-docker-example
+cd akkahttp-docker-example
+sbt docker
+docker run -d -p 9090:8080 --restart=always default/akkahttp-docker-example
 ```
 
 ## Ref
