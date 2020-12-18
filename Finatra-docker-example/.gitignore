@@ -1,0 +1,68 @@
+dist/*
+lib_managed/
+src_managed/
+project/boot/
+.history
+.cache
+.lib/
+spark-warehouse
+*.xsl
+*.xml
+*.DS_Store
+*.class
+.DS_Store
+target/streams/*
+#.properties
+project/project/*
+project/target/*
+project/target/streams/*
+target/streams/*
+project/target/scala-2.12/*
+project/project/target/*
+target/streams/compile/compile/*
+data/war_data.json
+derby.log
+metastore_db/
+target/streams/*
+
+# https://alvinalexander.com/source-code/scala/sample-gitignore-file-scala-sbt-intellij-eclipse
+# sbt
+# (may want to keep parts of 'project')
+bin/
+#project/
+target/
+build/
+
+# eclipse
+build
+.classpath
+.project
+.settings
+.worksheet
+
+# intellij idea
+*.log
+*.iml
+*.ipr
+*.iws
+.idea
+
+# mac
+.DS_Store
+
+# other?
+.history
+.scala_dependencies
+.cache
+.cache-main
+
+#general
+*.class
+
+# others 
+target/scala-2.11/FinatraHelloWorld_2.11-1.0.jar
+target/streams/$global/update/$global/streams/out
+target/streams/$global/update/$global/streams/update_cache_2.11/output
+target/*
+project/target/*
+project/target/scala-2.12/sbt-1.0/*
