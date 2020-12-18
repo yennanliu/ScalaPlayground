@@ -18,7 +18,17 @@ cd akkahttp-docker-example
 sbt docker
 docker run -d -p 9090:8080 --restart=always default/akkahttp-docker-example
 # check
-curl http://localhost:9090/hello
+curl localhost:9090/hello
+```
+
+```bash 
+# Finatra-docker-example
+cd Finatra-docker-example
+sbt docker
+docker run -d -p 8888:8888 --restart=always default/finatra-docker-example
+# check
+curl ocalhost:8888/hello
+curl localhost:8080/wazzup
 ```
 
 ## Ref
