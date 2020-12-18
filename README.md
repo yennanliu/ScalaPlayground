@@ -7,6 +7,9 @@
 cd BasicExample
 sbt docker
 docker run -d --restart=always sbtdocker/basic-example
+# check
+docker ps -a
+docker logs -f <Container ID>
 ```
 
 ```bash
@@ -14,6 +17,8 @@ docker run -d --restart=always sbtdocker/basic-example
 cd akkahttp-docker-example
 sbt docker
 docker run -d -p 9090:8080 --restart=always default/akkahttp-docker-example
+# check
+curl http://localhost:9090/hello
 ```
 
 ## Ref
