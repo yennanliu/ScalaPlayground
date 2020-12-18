@@ -46,17 +46,35 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.2.0" % "test",
   "org.scalatest" %% "scalatest-funsuite" % "3.2.0" % "test",
   "org.scalatest" %% "scalatest-propspec" % "3.2.0" % "test",
-  "org.scalatest" %% "scalatest-featurespec" % "3.2.0" % "test",
-
-  // click (DB library)
-  "com.typesafe.slick" %% "slick" % "3.0.0",
-  "org.slf4j" % "slf4j-nop" % "1.6.4",
-
-  // sqlite jdbc
-  "org.xerial" % "sqlite-jdbc" % "3.7.2"
+  "org.scalatest" %% "scalatest-featurespec" % "3.2.0" % "test"
 )
 
+enablePlugins(DockerPlugin)
+dockerfile in docker := {
+  val appPath = "/app"
+  val jarFile: File = sbt.Keys.`package`.in(Compile, packageBin).value
+  val classpath = (managedClasspath in Compile).value
+  val mainclass = "com.twitter.server.FinatraApp"
+  val jarTarget = s"${appPath}/${jarFile.getName}"
+  val classpathString = classpath.files.map(s"${appPath}/" + _.getName)
+    .mkString(":") + ":" + jarTarget + ":."
 
-//mainClass := Some("server.BasicServer")
+  new Dockerfile {
+    from("java")
+    add(classpath.files, s"${appPath}/")
+    add(jarFile, jarTarget)
+    entryPoint("java", "-cp", classpathString, mainclass)
+  }
+}
+
+lazy val tag = taskKey[Unit]("Execute the docker tag shell script")
+tag := {
+  "docker tag default/finatra-docker-example yen/finatra-docker-example"
+}
+
+lazy val push = taskKey[Unit]("Execute the push to docker registry")
+push := {
+  "docker push yen/finatra-docker-example"
+}
 
 conflictManager := ConflictManager.latestRevision
