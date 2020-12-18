@@ -25,10 +25,16 @@ curl localhost:9090/hello
 # Finatra-docker-example
 cd Finatra-docker-example
 sbt docker
-docker run -d -p 8888:8888 --restart=always default/finatra-docker-example
+docker run -d -p 8888:8888 --restart=always finatrahelloworld/finatrahelloworld
 # check
-curl ocalhost:8888/hello
-curl localhost:8080/wazzup
+curl localhost:8888/hello
+curl localhost:8888/wazzup
+
+# manually
+sbt clean compile
+sbt clean assembly
+java -cp target/scala-2.11/FinatraHelloWorld-assembly-1.0.jar com.twitter.server.FinatraApp
+
 ```
 
 ## Ref
