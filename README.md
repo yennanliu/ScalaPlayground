@@ -33,8 +33,8 @@ curl localhost:8888/wazzup
 # manually
 sbt clean compile
 sbt clean assembly
+#java -cp target/scala-2.11/FinatraHelloWorld-assembly-1.0.jar com.twitter.dev.HelloWorld
 java -cp target/scala-2.11/FinatraHelloWorld-assembly-1.0.jar com.twitter.server.FinatraApp
-
 ```
 
 ## Ref

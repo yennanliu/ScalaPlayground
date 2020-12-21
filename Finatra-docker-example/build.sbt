@@ -18,6 +18,10 @@ assemblyMergeStrategy in assembly := {
 resolvers += Resolver.sonatypeRepo("snapshots")
 
 libraryDependencies ++= Seq(
+  // scala
+  "org.scala-lang" % "scala-library" % "2.13.0",
+
+// finatra
   "com.twitter" %% "finatra-http" % versions.finatra,
   "ch.qos.logback" % "logback-classic" % versions.logback,
 
