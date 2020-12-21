@@ -24,7 +24,8 @@ curl localhost:9090/hello
 ```bash 
 # Finatra-docker-example
 cd Finatra-docker-example
-sbt docker
+#sbt docker
+sbt docker:publishLocal
 docker run -d -p 8888:8888 --restart=always finatrahelloworld/finatrahelloworld
 # check
 curl localhost:8888/hello
