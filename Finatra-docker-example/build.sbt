@@ -57,7 +57,7 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest-featurespec" % "3.2.0" % "test"
 )
 
-//enablePlugins(DockerPlugin)
+enablePlugins(sbtdocker.DockerPlugin)
 
 // dockerfile in docker := {
 //   val appPath = "/app"
@@ -80,6 +80,7 @@ libraryDependencies ++= Seq(
  dockerCommands := Seq(
    Cmd("FROM", "adoptopenjdk/openjdk8:centos"),
    //Cmd("EXPOSE", dockerExposedPorts.value.map(_.toString):_*), //dockerExposedPorts.map(_.toString)), //dockerExposedPorts.value.map(_.toString):_*),
+   //Cmd("EXPOSE", dockerExposedPorts.value.map(_.toString):_*),
    Cmd("COPY", "1/opt", "/opt"),
    Cmd("COPY", "2/opt", "/opt"),
    Cmd("RUN", "chmod", "-R", "u=rX,g=rX", "/opt/docker"),
