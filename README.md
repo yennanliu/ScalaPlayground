@@ -16,9 +16,15 @@ docker logs -f <Container ID>
 # akkahttp-docker-example
 cd akkahttp-docker-example
 sbt docker
-docker run -d -p 9090:8080 --restart=always default/akkahttp-docker-example
+docker images
+#docker run -it ef3371fa8946 # docker run -it <image_id>
+docker run -d -p 8888:8888 --restart=always <image_id>
+#docker run -d -p 9090:8080 --restart=always default/akkahttp-docker-example
+
 # check
-curl localhost:9090/hello
+curl localhost:8888/hello
+curl localhost:8888/wazzup
+#curl localhost:9990
 ```
 
 ```bash 

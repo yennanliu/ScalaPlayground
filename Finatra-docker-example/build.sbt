@@ -76,12 +76,12 @@ enablePlugins(JavaServerAppPackaging, sbtdocker.DockerPlugin)
 //   }
 // }
 
-//dockerExposedPorts ++= Seq(9990, 8888)
+dockerExposedPorts ++= Seq(9990, 8888)
 dockerPackageMappings in Docker += (baseDirectory.value / "bin" / "init.sh") -> "init.sh"
 dockerCommands := Seq(
    Cmd("FROM", "adoptopenjdk/openjdk8:centos"),
    //Cmd("EXPOSE", dockerExposedPorts.value.map(_.toString):_*), //dockerExposedPorts.map(_.toString)), //dockerExposedPorts.value.map(_.toString):_*),
-   //Cmd("EXPOSE", dockerExposedPorts.value.map(_.toString):_*),
+   Cmd("EXPOSE", dockerExposedPorts.value.map(_.toString):_*),
    Cmd("COPY", "1/opt", "/opt"),
    Cmd("COPY", "2/opt", "/opt"),
    Cmd("RUN", "chmod", "-R", "u=rX,g=rX", "/opt/docker"),
