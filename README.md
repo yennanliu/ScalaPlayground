@@ -39,6 +39,10 @@ curl localhost:8888/hello
 curl localhost:8888/wazzup
 #curl localhost:9990
 
+# check log
+docker ps -a 
+docker logs -f <image_id>
+
 # manually
 sbt clean compile
 sbt clean assembly
