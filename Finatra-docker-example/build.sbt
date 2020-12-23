@@ -59,23 +59,6 @@ libraryDependencies ++= Seq(
 
 enablePlugins(JavaServerAppPackaging, sbtdocker.DockerPlugin)
 
-// dockerfile in docker := {
-//   val appPath = "/app"
-//   val jarFile: File = sbt.Keys.`package`.in(Compile, packageBin).value
-//   val classpath = (managedClasspath in Compile).value
-//   val mainclass = "com.twitter.server.FinatraApp"
-//   val jarTarget = s"${appPath}/${jarFile.getName}"
-//   val classpathString = classpath.files.map(s"${appPath}/" + _.getName)
-//     .mkString(":") + ":" + jarTarget + ":."
-
-//   new Dockerfile {
-//     from("java")
-//     add(classpath.files, s"${appPath}/")
-//     add(jarFile, jarTarget)
-//     entryPoint("java", "-cp", classpathString, mainclass)
-//   }
-// }
-
 dockerExposedPorts ++= Seq(9990, 8888)
 dockerPackageMappings in Docker += (baseDirectory.value / "bin" / "init.sh") -> "init.sh"
 dockerCommands := Seq(
@@ -91,15 +74,5 @@ dockerCommands := Seq(
    Cmd("RUN", "chmod", "u+x,g+x", "/opt/docker/bin/init.sh"),
    Cmd("ENTRYPOINT", "/opt/docker/bin/init.sh")
  )
-
-//lazy val tag = taskKey[Unit]("Execute the docker tag shell script")
-//tag := {
-//  "docker tag default/finatra-docker-example yen/finatra-docker-example"
-//}
-//
-//lazy val push = taskKey[Unit]("Execute the push to docker registry")
-//push := {
-//  "docker push yen/finatra-docker-example"
-//}
 
 conflictManager := ConflictManager.latestRevision
