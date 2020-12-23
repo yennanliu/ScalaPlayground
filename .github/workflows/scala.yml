@@ -8,9 +8,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 1.8
@@ -25,4 +23,6 @@ jobs:
       run: cd BasicExample && sbt docker:publishLocal
     - name: Run sbt docker akkahttp-docker-example
       run: cd akkahttp-docker-example && sbt docker:publishLocal
+    - name: Check results
+      run: docker ps -a  && docker images
       
