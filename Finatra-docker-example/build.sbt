@@ -57,7 +57,7 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest-featurespec" % "3.2.0" % "test"
 )
 
-enablePlugins(sbtdocker.DockerPlugin)
+enablePlugins(JavaServerAppPackaging, sbtdocker.DockerPlugin)
 
 // dockerfile in docker := {
 //   val appPath = "/app"
