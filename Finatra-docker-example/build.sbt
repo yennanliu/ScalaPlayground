@@ -76,15 +76,17 @@ enablePlugins(JavaServerAppPackaging, sbtdocker.DockerPlugin)
 //   }
 // }
 
- //dockerExposedPorts ++= Seq(9990, 8888)
- dockerCommands := Seq(
+//dockerExposedPorts ++= Seq(9990, 8888)
+dockerPackageMappings in Docker += (baseDirectory.value / "bin" / "init.sh") -> "init.sh"
+dockerCommands := Seq(
    Cmd("FROM", "adoptopenjdk/openjdk8:centos"),
    //Cmd("EXPOSE", dockerExposedPorts.value.map(_.toString):_*), //dockerExposedPorts.map(_.toString)), //dockerExposedPorts.value.map(_.toString):_*),
    //Cmd("EXPOSE", dockerExposedPorts.value.map(_.toString):_*),
    Cmd("COPY", "1/opt", "/opt"),
    Cmd("COPY", "2/opt", "/opt"),
    Cmd("RUN", "chmod", "-R", "u=rX,g=rX", "/opt/docker"),
-   Cmd("RUN", "chmod", "u+x,g+x", "/opt/docker/bin/Finatra-docker-example"),
+   Cmd("RUN", "pwd && ls && ls opt && ls opt/docker"),
+   Cmd("RUN", "chmod", "u+x,g+x", "/opt/docker/bin/finatra-app"),
    Cmd("ADD", "init.sh", "/opt/docker/bin/"),
    Cmd("RUN", "chmod", "u+x,g+x", "/opt/docker/bin/init.sh"),
    Cmd("ENTRYPOINT", "/opt/docker/bin/init.sh")
