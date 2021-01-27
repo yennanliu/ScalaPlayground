@@ -24,8 +24,8 @@ libraryDependencies ++= Seq(
 
     // scala requests
     "com.lihaoyi" %% "requests" % "0.6.5",
-    // ujson : https://www.lihaoyi.com/upickle/
-    "com.lihaoyi" %% "upickle" % "0.9.5"
+    // ujson : https://www.lihaoyi.com/upickle/#uJson
+    "com.lihaoyi" %% "ujson" % "0.9.5"
 )
 
 conflictManager := ConflictManager.latestRevision
