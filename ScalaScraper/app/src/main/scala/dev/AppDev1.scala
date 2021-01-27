@@ -4,9 +4,9 @@ import com.twitter.finagle.http.Request
 import com.twitter.finatra.http.routing.HttpRouter
 import com.twitter.finatra.http.{Controller, HttpServer}
 
-object AppDev1 extends FinatraServer
+object AppDev1 extends FinatraServer1
 
-class FinatraServer extends HttpServer {
+class FinatraServer1 extends HttpServer {
   override protected def configureHttp(router: HttpRouter): Unit = {
     router.add[Controller01]
     router.add[Controller02]
