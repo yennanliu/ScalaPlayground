@@ -11,6 +11,7 @@ class FinatraServer3 extends HttpServer {
   override protected def configureHttp(router: HttpRouter): Unit = {
     router.add[Controller06]
     router.add[Controller07]
+    router.add[Controller08]
   }
 }
 
@@ -21,6 +22,12 @@ class Controller06 extends Controller {
 class Controller07 extends Controller {
   val url = "https://www.ptt.cc/bbs/Soft_Job/M.1612203023.A.036.html"
   val r = requests.get(url)
-  get("/scrap/test6") {request: Request => r.text()}
+  get("/scrapV3/test7") {request: Request => r.text()}
+}
+
+class Controller08 extends Controller {
+  val url = "https://www.ptt.cc/bbs/Soft_Job/M.1612203023.A.036.html"
+  val r = requests.get(url)
+  get("/scrapV3/test8") {request: Request =>  r.text()}
 }
 

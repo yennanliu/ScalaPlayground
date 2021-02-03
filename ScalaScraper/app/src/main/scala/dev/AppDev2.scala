@@ -11,22 +11,23 @@ object AppDev2 extends FinatraServer2
 
 class FinatraServer2 extends HttpServer {
   override protected def configureHttp(router: HttpRouter): Unit = {
-    router.add[Controller03]
-    router.add[Controller04]
-    router.add[Controller05]
+    router.add[Controller2_1]
+    router.add[Controller2_2]
+    router.add[Controller2_3]
+    router.add[Controller2_4]
   }
 }
 
 // scrap controller
-class Controller03 extends Controller {
+class Controller2_1 extends Controller {
   val r_github = requests.get("http://www.github.com")
   val httpStatus:String = r_github.statusCode.toString
   val httpText:String = r_github.text().toString
   println(httpStatus)
-  get("/scrap/test1") {request: Request => s"http get status : $httpStatus | text : $httpText"}
+  get("/scrap2/test1") {request: Request => s"http get status : $httpStatus | text : $httpText"}
 }
 
-class Controller04 extends Controller {
+class Controller2_2 extends Controller {
 
   def ScrappingGithub(userName:String):String = {
     val baseURL = "https://github.com/"
@@ -36,21 +37,29 @@ class Controller04 extends Controller {
   }
 
   //https://twitter.github.io/finatra/user-guide/http/controllers.html
-  get("/scrap/test2/:userName") {
+  get("/scrap2/test2/:userName") {
     request: Request =>
       val userName = request.params("userName")
       println(s"**** userName = $userName")
       ScrappingGithub(userName)
   }
-
 }
 
-class Controller05 extends Controller{
+class Controller2_3 extends Controller{
 
-  get("/scrap/test3/:userName"){
+  get("/scrap2/test3/:userName"){
     requests: Request =>
       val userName = requests.params("userName")
       println(s"**** userName = $userName")
       GithubScraper.ParseText(userName)
   }
+}
+
+class Controller2_4 extends Controller {
+  val r_github = requests.get("https://api.github.com/events")
+  val httpStatus:String = r_github.statusCode.toString
+  println(httpStatus)
+  // process event to json format
+  val r_json = ujson.read(r_github.text)
+  get("/scrap2/test4") {request: Request => r_json }
 }
