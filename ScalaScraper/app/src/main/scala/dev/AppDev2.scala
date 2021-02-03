@@ -15,6 +15,7 @@ class FinatraServer2 extends HttpServer {
     router.add[Controller2_2]
     router.add[Controller2_3]
     router.add[Controller2_4]
+    router.add[Controller2_5]
   }
 }
 
@@ -62,4 +63,21 @@ class Controller2_4 extends Controller {
   // process event to json format
   val r_json = ujson.read(r_github.text)
   get("/scrap2/test4") {request: Request => r_json }
+}
+
+// http://www.lihaoyi.com/upickle/#uJson
+class Controller2_5 extends Controller {
+  val url = "https://api.github.com/events"
+  val r_github = requests.get(url)
+  val httpStatus:String = r_github.statusCode.toString
+  println(httpStatus)
+  // process event to json format
+  val r_json = ujson.read(r_github.text)
+  println("***" + r_json.arr(0).obj.keys + " id = " +  r_json(0)("id").str + " json_length = " + r_json.arr.length)
+  //val ids = r_json.map( _ =)
+
+//  for (id <- r_json.arr.length){
+//    println("*** id = " + r_json.arr(id.toInt)("id").str)
+//  }
+  get("/scrap2/test5") {request: Request => r_json }
 }
