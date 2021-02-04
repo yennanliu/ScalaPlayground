@@ -76,8 +76,9 @@ class Controller2_5 extends Controller {
   println("***" + r_json.arr(0).obj.keys + " id = " +  r_json(0)("id").str + " json_length = " + r_json.arr.length)
   //val ids = r_json.map( _ =)
 
-//  for (id <- r_json.arr.length){
-//    println("*** id = " + r_json.arr(id.toInt)("id").str)
-//  }
+    for (event <- r_json.arr){
+      println("*** event = " + event)
+      println("*** id = " + event("id") + "|  type = " + event("type"))
+    }
   get("/scrap2/test5") {request: Request => r_json }
 }
