@@ -11,7 +11,8 @@ object App extends Server
 
 class Server extends HttpServer {
   override protected def configureHttp(router: HttpRouter): Unit = {
-    router.add[AppController.Controller01]
-    router.add[AppController.Controller02]
+    router.add[AppController.ControllerTest1]
+    router.add[AppController.ControllerTest2]
+    router.add[AppController.ControllerGetUserList]
   }
 }
