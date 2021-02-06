@@ -1,13 +1,17 @@
 *.class
 *.log
 .DS_Store
-
 # project
 BasicExample/project/project/target/*
 BasicExample/project/target/*
 BasicExample/target/*
 BasicExample/.idea/
 BasicExample/.bsp/
-
+#  ScalaScraper
 ScalaScraper/app/.idea/
 ScalaScraper/app/.bsp/
+# TravelApi
+TravelApi/.idea
+TravelApi/project/target
+TravelApi/project/project/
+TravelApi/target/
