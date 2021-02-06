@@ -1,11 +1,13 @@
 package controller
 
-import com.twitter.finagle.http.Request
 import com.twitter.finatra.http.Controller
+import com.twitter.finagle.http.{Request, Response}
 
 import utils.userUtils
 
 object AppController {
+
+  val u_utils = new userUtils
 
   class ControllerTest1 extends Controller {
     get("/test1") {request: Request => "hello from FinatraServer !!!"}
@@ -16,7 +18,14 @@ object AppController {
   }
 
   class ControllerGetUserList extends Controller {
-    val u_utils = new userUtils
     get("/users") {request: Request =>  u_utils.getAllUsers()}
+  }
+
+  class ControllerAddNewUser extends Controller {
+    get("/add_users/:userName/:password") {
+      requests: Request =>
+      val userName = requests.params("userName")
+      val password = requests.params("password")
+      u_utils.addNewUser(userName, password)}
   }
 }

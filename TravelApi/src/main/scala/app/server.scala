@@ -14,5 +14,6 @@ class Server extends HttpServer {
     router.add[AppController.ControllerTest1]
     router.add[AppController.ControllerTest2]
     router.add[AppController.ControllerGetUserList]
+    router.add[AppController.ControllerAddNewUser]
   }
 }
