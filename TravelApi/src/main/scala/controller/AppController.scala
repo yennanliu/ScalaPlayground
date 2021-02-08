@@ -26,6 +26,8 @@ object AppController {
       requests: Request =>
       val userName = requests.params("userName")
       val password = requests.params("password")
-      u_utils.addNewUser(userName, password)}
+      u_utils.addNewUser(userName, password)
+      s"new user created! $userName"
+    }
   }
 }
