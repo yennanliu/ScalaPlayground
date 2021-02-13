@@ -18,12 +18,17 @@ class userUtils {
   }
 
   def getAllUsers():String = {
-      "here is the all users : " + "aaa, bbb, ccc"
+      "All users : " + userIds.toString()
   }
 
-  def addNewUser(userName: String, password: String): Unit = {
+  def addNewUser(userId: String): Unit = {
     // TODO : need to implement the completed functionality
-    println(s"new user created!  userName =  $userName")
+    if (userIds.contains(userId)){
+      s"user already existed (userId = $userId)"
+    } else {
+      userIds :: List(userId)
+      getAllUsers()
+    }
   }
 
   def deleteUser(userId: String): Unit ={

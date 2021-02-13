@@ -12,7 +12,7 @@ object AppController {
   val users = List()
 
   class ControllerTest1 extends Controller {
-    get("/test1") {request: Request => "hello from FinatraServer !!!"}
+    get("/hello") {request: Request => "hello from FinatraServer !!!"}
   }
 
   class ControllerGetUser extends Controller {
@@ -27,12 +27,11 @@ object AppController {
   }
 
   class ControllerAddNewUser extends Controller {
-    get("/add_users/:userName/:password") {
+    get("/add_users/:userId") {
       requests: Request =>
-      val userName = requests.params("userName")
-      val password = requests.params("password")
-      u_utils.addNewUser(userName, password)
-      s"new user created! $userName"
+      val userId = requests.params("userId")
+      u_utils.addNewUser(userId)
+      s"new user created! $userId"
     }
   }
 }
