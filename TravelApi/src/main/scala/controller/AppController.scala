@@ -9,12 +9,17 @@ object AppController {
 
   val u_utils = new userUtils
 
+  val users = List()
+
   class ControllerTest1 extends Controller {
     get("/test1") {request: Request => "hello from FinatraServer !!!"}
   }
 
-  class ControllerTest2 extends Controller {
-    get("/test2") {request: Request => "xxxxx"}
+  class ControllerGetUser extends Controller {
+    get("/user/:userId") {
+      requests: Request =>
+      val userId = requests.params("userId")
+      u_utils.getUser(userId)}
   }
 
   class ControllerGetUserList extends Controller {
