@@ -1,21 +1,19 @@
 package utils
 
-// TO FIX : load the default user data via config
-//import data.userData
-
 import utils.DataIO
 
-import scala.collection.mutable.ArrayBuffer
+import scala.collection.mutable.ListBuffer
 
 class userUtils {
 
-  //  val user_data = new data.userData
-  //  val userIds = user_data.userIds
-  //  val userPasswords = user_data.userPasswords
-
   val data_io = new DataIO
   val user_data = data_io.getUserRecord()
-  val userIds = user_data("userId").arr.map(_.str)
+  val userIds = ListBuffer[String]() //user_data("users")("userId").arr.map(_.str)
+
+  // TODO : get the users id via scala static way
+  for ( i <- user_data("users").obj.keys ){
+    userIds += i
+  }
 
   def getUser(userId: String): String ={
     println("*** userIds.contains(userId) = " + userIds.contains(userId))
@@ -23,7 +21,7 @@ class userUtils {
       s"userId = $userId"
     } else {
       s"""user = $userId is not existed !
-        | existing users : $userIds
+        | $getAllUsers
       """.stripMargin
     }
   }

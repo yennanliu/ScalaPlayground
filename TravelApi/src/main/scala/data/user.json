@@ -1,5 +1,16 @@
 {
-  "userId": ["u0001", "u0002", "u0003"],
-  "name": ["jack", "jim", "john"],
-  "balance" : [100, 100, 100]
+  "users" : {
+    "u0001" : {
+        "name" : "jack",
+        "balance" : 100
+    },
+    "u0002" : {
+        "name" : "jim",
+        "balance" : 100
+    },
+    "u0003" : {
+      "name" : "jo",
+      "balance" : 100
+    }
+  }
 }

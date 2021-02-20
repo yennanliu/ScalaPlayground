@@ -1,5 +1,16 @@
 {
-  "orderId": ["o0001", "o0002", "o0003"],
-  "product_name": ["a_hotel", "b_hotel", "c_cafe"],
-  "price" : [50, 200, 199]
+    "orders" : {
+        "o0001" : {
+            "prod_name" : "a_hotel",
+            "price" : 999
+        },
+        "o0002" : {
+            "prod_name" : "b_hotel",
+            "price" : 10
+        },
+        "o0003" : {
+            "prod_name" : "c_cafe",
+            "price" : 50
+        }
+    }
 }
