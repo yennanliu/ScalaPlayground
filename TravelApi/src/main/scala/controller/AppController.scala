@@ -11,8 +11,8 @@ object AppController {
 
   val users = List()
 
-  class ControllerTest1 extends Controller {
-    get("/hello") {request: Request => "hello from FinatraServer !!!"}
+  class ControllerTest extends Controller {
+    get("/hello") {request: Request => "hello from Finatra Server !!!"}
   }
 
   class ControllerGetUser extends Controller {
@@ -22,7 +22,7 @@ object AppController {
       u_utils.getUser(userId)}
   }
 
-  class ControllerGetUserList extends Controller {
+  class ControllerGetAllUsers extends Controller {
     get("/users") {request: Request =>  u_utils.getAllUsers()}
   }
 

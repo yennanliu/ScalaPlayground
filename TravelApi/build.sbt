@@ -34,6 +34,10 @@ libraryDependencies ++= Seq(
     "com.lihaoyi" %% "requests" % "0.6.5",
     // ujson : https://www.lihaoyi.com/upickle/#uJson
     "com.lihaoyi" %% "ujson" % "0.9.5",
+
+    // os libaray for Json IO : https://github.com/lihaoyi/os-lib#getting-started
+    "com.lihaoyi" %% "os-lib" % "0.7.1",
+
     // finatra
     "com.twitter" %% "finatra-http" % versions.finatra,
     "ch.qos.logback" % "logback-classic" % versions.logback,
