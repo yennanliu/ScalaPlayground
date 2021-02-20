@@ -1,5 +1,5 @@
 {
-  "first_name": "Phil",
-  "last_name": "Hellmuth",
-  "birth_year": 1964
+  "userId": ["u0001", "u0002", "u0003"],
+  "name": ["jack", "jim", "john"],
+  "balance" : [100, 100, 100]
 }

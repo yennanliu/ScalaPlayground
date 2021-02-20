@@ -1,0 +1,5 @@
+{
+  "orderId": ["o0001", "o0002", "o0003"],
+  "product_name": ["a_hotel", "b_hotel", "c_cafe"],
+  "price" : [50, 200, 199]
+}
