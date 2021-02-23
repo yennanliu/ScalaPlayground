@@ -4,20 +4,22 @@ import scala.collection.mutable.ListBuffer
 
 // https://github.com/yennanliu/utility_Scala/blob/master/src/main/scala/ScalaBasic/CompanionDemo5.scala
 
-// let's make the orderUtil via "companion" approach
+// make the orderUtil Scala companion
 
-class orderUtil(UName: String, oID: String){
+class orderUtils(UName: String, oID: String){
+
   var userName:String = UName
+
   var orderID:String = oID
 }
 
-object orderUtil{
+object orderUtils{
 
   var orderNum: Int = 0
 
   var orders: ListBuffer[String] = new ListBuffer[String]()
 
-  def makeOrder(o: orderUtil): Unit = {
+  def makeOrder(o: orderUtils): Unit = {
     println(o.userName + " make order !")
     orderNum += 1
     orders += o.orderID
@@ -27,8 +29,19 @@ object orderUtil{
     println("Total order count : " + orderNum)
   }
 
-  def showAllOrders(): Unit = {
-    println("All orders : " + orders)
+  def showAllOrders() = {
+    //println("All orders : " + orders)
+    orders
+  }
+
+  def getOrder(o: orderUtils) = {
+    if ( orders.contains(o.orderID) ) {
+      //println("order id  = " + o.orderID)
+      o.orderID
+    } else {
+      println("order not existed")
+      showAllOrders()
+    }
   }
 
 }
@@ -37,14 +50,14 @@ object orderUtil{
 //object test extends App {
 //
 //  // define orders
-//  val o1 = new orderUtil("tim", "C-0001")
-//  val o2 = new orderUtil("jack", "C-0002")
-//  val o3 = new orderUtil("vivi", "C-0003")
+//  val o1 = new orderUtils("tim", "C-0001")
+//  val o2 = new orderUtils("jack", "C-0002")
+//  val o3 = new orderUtils("vivi", "C-0003")
 //
 //  // make orders!
-//  orderUtil.makeOrder(o1)
-//  orderUtil.makeOrder(o2)
-//  orderUtil.makeOrder(o3)
+//  orderUtils.makeOrder(o1)
+//  orderUtils.makeOrder(o2)
+//  orderUtils.makeOrder(o3)
 //
 //  orderUtil.orderNum
 //  orderUtil.showAllOrders
