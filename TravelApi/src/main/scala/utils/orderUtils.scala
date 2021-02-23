@@ -2,19 +2,6 @@ package utils
 
 import scala.collection.mutable.ListBuffer
 
-//import base.orderUtilsBase
-//
-//class orderUtil extends orderUtilsBase {
-//  override def checkOrder(orderId:String): Unit = {
-//    println(s"this is order detail :  , orderId = $orderId")
-//  }
-//
-//  override def makeOrder(userId: String): Unit = {
-//    println(s"user $userId make order!")
-//  }
-//}
-
-
 // https://github.com/yennanliu/utility_Scala/blob/master/src/main/scala/ScalaBasic/CompanionDemo5.scala
 
 // let's make the orderUtil via "companion" approach
@@ -28,16 +15,11 @@ object orderUtil{
 
   var orderNum: Int = 0
 
-  //var orders:List[String] = List()
-
   var orders: ListBuffer[String] = new ListBuffer[String]()
 
   def makeOrder(o: orderUtil): Unit = {
     println(o.userName + " make order !")
     orderNum += 1
-    //orders.appended(o.orderID)
-    //orders ::: List(o.orderID)
-
     orders += o.orderID
   }
 
@@ -66,4 +48,17 @@ object orderUtil{
 //
 //  orderUtil.orderNum
 //  orderUtil.showAllOrders
+//}
+
+
+//import base.orderUtilsBase
+//
+//class orderUtil extends orderUtilsBase {
+//  override def checkOrder(orderId:String): Unit = {
+//    println(s"this is order detail :  , orderId = $orderId")
+//  }
+//
+//  override def makeOrder(userId: String): Unit = {
+//    println(s"user $userId make order!")
+//  }
 //}
