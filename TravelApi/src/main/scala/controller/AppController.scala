@@ -2,13 +2,11 @@ package controller
 
 import com.twitter.finatra.http.Controller
 import com.twitter.finagle.http.{Request, Response}
-
-import utils.{userUtils, orderUtils}
+import utils.{orderUtils, userUtils}
 
 object AppController {
 
   // users
-
   val u_utils = new userUtils
 
   val users = List()
@@ -39,27 +37,26 @@ object AppController {
   }
 
   // orders
-  // init orders
-  // TODO : fix this, make its as default/automatic process
-  val o1 = new orderUtils("u0001", "C-0001")
-  val o2 = new orderUtils("u0002", "C-0002")
-  val o3 = new orderUtils("u0003", "C-0003")
-
-  orderUtils.makeOrder(o1)
-  orderUtils.makeOrder(o2)
-  orderUtils.makeOrder(o3)
-
   // TODO : fix this
   class GetOrder extends Controller {
       get("/order/:orderId") {
         requests : Request =>
-          val orderId = requests.params("orderId")
-          orderUtils.getOrder(o1)
+          // if there is no order, init the orders
+          if ( orderUtils.orderNum == 0  ){
+            orderUtils.initOrder()
+          }
+         val orderId = requests.params("orderId")
+         //orderUtils.getOrder(orderUtils)
       }
   }
 
+  // TODO : fix this
   class ShowOrders extends Controller {
     get("/orders"){
+      // if there is no order, init the orders
+      if ( orderUtils.orderNum == 0  ){
+        orderUtils.initOrder()
+      }
       requests : Request =>
         orderUtils.showAllOrders()
     }
