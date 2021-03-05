@@ -50,6 +50,15 @@ sbt clean assembly
 java -cp target/scala-2.11/FinatraHelloWorld-assembly-1.0.jar com.twitter.server.FinatraApp
 ```
 
+- [TravelAPI](./TravelApi)
+```bash
+# dev
+```
+* endpoints:
+	- http://localhost:8888/hello
+	- http://localhost:8888/users
+	- http://localhost:8888/orders
+
 ## Inin the project
 ```bash
 # make a prpject /ScalaScraper
