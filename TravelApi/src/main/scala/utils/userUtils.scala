@@ -11,11 +11,18 @@ class userUtils {
   val userIds = ListBuffer[String]() //user_data("users")("userId").arr.map(_.str)
 
   // TODO : get the users id via scala static way
-  for ( i <- user_data("users").obj.keys ){
-    userIds += i
+  def getCurrentUserids(): ListBuffer[String] = {
+    //val result = scala.collection.mutable.Set[String]()
+    for (i <- user_data("users").obj.keys) {
+      if (! userIds.contains(i)){
+        userIds += i
+      }
+    }
+    userIds
   }
 
   def getUser(userId: String): String ={
+    getCurrentUserids()
     println("*** userIds.contains(userId) = " + userIds.contains(userId))
     if ( userIds.contains(userId) ) {
       s"userId = $userId"
@@ -27,15 +34,18 @@ class userUtils {
   }
 
   def getAllUsers():String = {
-      "All users : " + userIds.toString()
+    getCurrentUserids()
+    "All users : " + userIds.toString()
   }
 
   def addNewUser(userId: String): Unit = {
     // TODO : need to implement the completed functionality
+    getCurrentUserids()
     if (userIds.contains(userId)){
       s"user already existed (userId = $userId)"
     } else {
-      userIds :: List(userId)
+      data_io.addUserRecord(userId)
+      //userIds :: List(userId)
       getAllUsers()
     }
   }

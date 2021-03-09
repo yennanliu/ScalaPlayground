@@ -75,3 +75,6 @@ sbt new scala/scala-seed.g8 -o app
 - https://www.scala-sbt.org/sbt-native-packager/formats/docker.html
 - https://github.com/marcuslonnberg/sbt-docker
 - https://ithelp.ithome.com.tw/articles/10192036
+- Scala works with json
+	- https://mungingdata.com/scala/read-write-json/
+	- https://github.com/lihaoyi/os-lib#getting-started
