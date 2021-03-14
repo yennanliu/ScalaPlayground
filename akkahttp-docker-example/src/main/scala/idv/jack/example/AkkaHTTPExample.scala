@@ -20,7 +20,5 @@ object AkkaHTTPExample {
         }
       }
     Http().bindAndHandle(route, "0.0.0.0", 8080)
-
-
   }
 }
