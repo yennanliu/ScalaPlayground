@@ -2,7 +2,7 @@ package controller
 
 import com.twitter.finatra.http.Controller
 import com.twitter.finagle.http.{Request, Response}
-import utils.{orderUtils, userUtils}
+import utils.{userUtils}
 
 object AppController {
 
@@ -28,7 +28,7 @@ object AppController {
   }
 
   class AddNewUser extends Controller {
-    get("/add_users/:userId") {
+    get("/add_user/:userId") {
       requests: Request =>
       val userId = requests.params("userId")
       u_utils.addNewUser(userId)
@@ -37,29 +37,29 @@ object AppController {
   }
 
   // orders
-  // TODO : fix this
-  class GetOrder extends Controller {
-      get("/order/:orderId") {
-        requests : Request =>
-          // if there is no order, init the orders
-          if ( orderUtils.orderNum == 0  ){
-            orderUtils.initOrder()
-          }
-         val orderId = requests.params("orderId")
-         //orderUtils.getOrder(orderUtils)
-      }
-  }
-
-  // TODO : fix this
-  class ShowOrders extends Controller {
-    get("/orders"){
-      // if there is no order, init the orders
-      if ( orderUtils.orderNum == 0  ){
-        orderUtils.initOrder()
-      }
-      requests : Request =>
-        orderUtils.showAllOrders()
-    }
-  }
+//  // TODO : fix this
+//  class GetOrder extends Controller {
+//      get("/order/:orderId") {
+//        requests : Request =>
+//          // if there is no order, init the orders
+//          if ( orderUtils.orderNum == 0  ){
+//            orderUtils.initOrder()
+//          }
+//         val orderId = requests.params("orderId")
+//         //orderUtils.getOrder(orderUtils)
+//      }
+//  }
+//
+//  // TODO : fix this
+//  class ShowOrders extends Controller {
+//    get("/orders"){
+//      // if there is no order, init the orders
+//      if ( orderUtils.orderNum == 0  ){
+//        orderUtils.initOrder()
+//      }
+//      requests : Request =>
+//        orderUtils.showAllOrders()
+//    }
+//  }
 
 }

@@ -23,8 +23,6 @@ class DataIO{
     // overwrite the file if already existed
     val newUser =  ujson.Obj(userId -> "")
     data(userId) = newUser
-    // println("*** data = " + data )
-    //println("*** data(\"users\")(\"u0001\") " + data("users")("u0001") )
     os.write.over(os.pwd/"src"/"main"/"scala"/"data"/"user.json", data)
   }
 

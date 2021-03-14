@@ -3,6 +3,7 @@
 	- http://localhost:8888/hello
 	- http://localhost:8888/users
 	- http://localhost:8888/orders
+	- http://localhost:8888/add_user/<user_id>
 
 ### Inin the project
 ```bash
