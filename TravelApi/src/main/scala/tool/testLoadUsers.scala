@@ -17,14 +17,14 @@ object testLoadUsers extends App {
   println("===============")
 
   val names = ListBuffer[String]()
-  for ( i <- user_data("users").obj.keys ){
+  for ( i <- user_data.obj.keys ){
     println("*** " + i)
     names += i
   }
 
   println("===============")
 
-  for ( (k,v) <- user_data("users").obj ){
+  for ( (k,v) <- user_data.obj ){
     println("k,v = " + (k,v))
   }
 

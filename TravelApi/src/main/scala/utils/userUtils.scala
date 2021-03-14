@@ -12,6 +12,7 @@ class userUtils {
 
   // TODO : get the users id via scala static way
   def getCurrentUserids(): ListBuffer[String] = {
+    //val user_data = data_io.getUserRecord()
     //val result = scala.collection.mutable.Set[String]()
     for (i <- user_data("users").obj.keys) {
       if (! userIds.contains(i)){
@@ -33,10 +34,16 @@ class userUtils {
     }
   }
 
-  def getAllUsers():String = {
-    getCurrentUserids()
-    "All users : " + userIds.toString()
-  }
+  def getAllUsers() = {
+      //val user_data = data_io.getUserRecord()
+      //val result = scala.collection.mutable.Set[String]()
+      for (i <- user_data.obj.keys) {
+        if (! userIds.contains(i)){
+          userIds += i
+        }
+      }
+      userIds
+    }
 
   def addNewUser(userId: String): Unit = {
     // TODO : need to implement the completed functionality

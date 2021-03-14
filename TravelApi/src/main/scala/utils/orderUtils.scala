@@ -47,12 +47,12 @@ object orderUtils{
   // TODO : fix this, make its as default/automatic process
   def initOrder(): Unit = {
     // init orders
-    val o1 = new orderUtils("u0001", "c0001")
-    val o2 = new orderUtils("u0002", "c0002")
-    val o3 = new orderUtils("u0003", "c0003")
-
-    orderUtils.makeOrder(o1)
-    orderUtils.makeOrder(o2)
-    orderUtils.makeOrder(o3)
+    //    val o1 = new orderUtils("u0001", "c0001")
+    //    val o2 = new orderUtils("u0002", "c0002")
+    //    val o3 = new orderUtils("u0003", "c0003")
+    //
+    //    orderUtils.makeOrder(o1)
+    //    orderUtils.makeOrder(o2)
+    //    orderUtils.makeOrder(o3)
   }
 }
