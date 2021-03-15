@@ -11,5 +11,6 @@ object App extends Server
 class Server extends HttpServer {
   override protected def configureHttp(router: HttpRouter): Unit = {
     router.add[AppController.hello]
+    router.add[AppController.sparkDemo]
   }
 }

@@ -4,7 +4,7 @@ import org.apache.spark.SparkContext
 import org.apache.spark.sql.{Row, SparkSession}
 // https://github.com/yennanliu/NYC_Taxi_Pipeline/blob/master/src/main/scala/DataLoad/LoadGreenTripData.scala
 
-object SparkBatchTest extends App{
+object SparkBatchRunner extends App{
 
   val sc = new SparkContext("local[*]", "LoadGreenTripData")
 
