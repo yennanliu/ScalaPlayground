@@ -1,6 +1,6 @@
 name := "ScalaPostgre"
 
-//import Dependencies._
+import Dependencies._
 
 ThisBuild / scalaVersion     := "2.13.4"
 ThisBuild / version          := "0.1.0-SNAPSHOT"
@@ -16,11 +16,11 @@ lazy val versions = new {
 
 resolvers += Resolver.sonatypeRepo("snapshots")
 
-// lazy val root = (project in file("."))
-//   .settings(
-//     name := "app",
-//     libraryDependencies += scalaTest % Test
-//   )
+ lazy val root = (project in file("."))
+   .settings(
+     name := "app",
+     libraryDependencies += scalaTest % Test
+   )
 
 resolvers += Resolver.sonatypeRepo("snapshots")
 
