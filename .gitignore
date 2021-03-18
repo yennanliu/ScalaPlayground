@@ -7,7 +7,7 @@ BasicExample/project/target/*
 BasicExample/target/*
 BasicExample/.idea/
 BasicExample/.bsp/
-#  ScalaScraper
+# ScalaScraper
 ScalaScraper/app/.idea/
 ScalaScraper/app/.bsp/
 # TravelApi
@@ -15,3 +15,6 @@ TravelApi/.idea
 TravelApi/project/target
 TravelApi/project/project/
 TravelApi/target/
+# ScalaPostgre
+ScalaPostgre/project/*
+ScalaPostgre/target/*
