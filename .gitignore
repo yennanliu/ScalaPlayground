@@ -17,4 +17,5 @@ TravelApi/project/project/
 TravelApi/target/
 # ScalaPostgre
 ScalaPostgre/project/*
-ScalaPostgre/target/*
+#ScalaPostgre/target/*
+ScalaPostgre/.idea/
