@@ -1,17 +1,13 @@
 package utils
 
-import utils.DataIO
-
 import scala.collection.mutable.ListBuffer
 
 class userUtils {
 
   val data_io = new DataIO
-  val user_data = data_io.getUserRecord()
-  val userIds = ListBuffer[String]()
 
   def getUser(userId: String): String ={
-    getAllUsers()
+    val userIds = getAllUsers()
     println("*** userIds.contains(userId) = " + userIds.contains(userId))
     if ( userIds.contains(userId) ) {
       s"userId = $userId"
@@ -23,7 +19,10 @@ class userUtils {
   }
 
   def getAllUsers() = {
-      for (i <- user_data.obj.keys) {
+    val user_data = data_io.getUserRecord()
+    val userIds = ListBuffer[String]()
+
+    for (i <- user_data.obj.keys) {
         if (! userIds.contains(i)){
           userIds += i
         }
@@ -33,13 +32,11 @@ class userUtils {
 
   def addNewUser(userId: String): Unit = {
     // TODO : need to implement the completed functionality
-    getAllUsers()
+    val userIds = getAllUsers()
     if (userIds.contains(userId)){
       s"user already existed (userId = $userId)"
     } else {
       data_io.addUserRecord(userId)
-      //userIds :: List(userId)
-      getAllUsers()
     }
   }
 
