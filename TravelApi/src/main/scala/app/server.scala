@@ -16,6 +16,7 @@ class Server extends HttpServer {
     router.add[AppController.GetUser]
     router.add[AppController.GetAllUsers]
     router.add[AppController.AddNewUser]
+    router.add[AppController.DeleteUser]
     // order
     // router.add[AppController.GetOrder]
     // router.add[AppController.ShowOrders]

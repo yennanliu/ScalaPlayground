@@ -8,7 +8,6 @@ object AppController {
 
   // users
   val u_utils = new userUtils
-
   val users = List()
 
   class ControllerTest extends Controller {
@@ -33,6 +32,15 @@ object AppController {
       val userId = requests.params("userId")
       u_utils.addNewUser(userId)
       s"new user created! $userId"
+    }
+  }
+
+  class DeleteUser extends Controller {
+    get("/delete_user/:userId") {
+      requests: Request =>
+        val userId = requests.params("userId")
+        u_utils.deleteUser(userId)
+        s"new user deleted! $userId"
     }
   }
 

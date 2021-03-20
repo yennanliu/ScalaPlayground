@@ -21,7 +21,6 @@ class userUtils {
   def getAllUsers() = {
     val user_data = data_io.getUserRecord()
     val userIds = ListBuffer[String]()
-
     for (i <- user_data.obj.keys) {
         if (! userIds.contains(i)){
           userIds += i
@@ -40,13 +39,20 @@ class userUtils {
     }
   }
 
+  // TODO : fix this method
   def deleteUser(userId: String): Unit ={
     val userIds = getAllUsers()
     if (! userId.contains(userId)) {
-      s"failed to delete userId = $userId ! "
+      println(s"failed to delete userId = $userId ! ")
     }
     userIds -= userId
-    s"delete userId = $userId ok !"
+    // clean user.json
+    data_io.deleteFile("/src/main/scala/data/user.json")
+    // save current userIds to user.json
+    for (i <- userIds) {
+      addNewUser(i)
+    }
+    println(s"delete userId = $userId ok !")
   }
 
   def updateUser(userId: String): Unit = {
@@ -54,7 +60,6 @@ class userUtils {
     println(s"user updated!  userId =  $userId")
   }
 
-  private def saveUsers(userIds:ListBuffer[String]): Unit = {
-
-  }
+//  private def saveUsers(userIds:ListBuffer[String]): Unit = {
+//  }
 }
