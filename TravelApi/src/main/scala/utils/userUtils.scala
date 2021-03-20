@@ -41,12 +41,20 @@ class userUtils {
   }
 
   def deleteUser(userId: String): Unit ={
-    // TODO : need to implement the completed functionality
-    println(s"user deleted!  userId =  $userId")
+    val userIds = getAllUsers()
+    if (! userId.contains(userId)) {
+      s"failed to delete userId = $userId ! "
+    }
+    userIds -= userId
+    s"delete userId = $userId ok !"
   }
 
   def updateUser(userId: String): Unit = {
     // TODO : need to implement the completed functionality
     println(s"user updated!  userId =  $userId")
+  }
+
+  private def saveUsers(userIds:ListBuffer[String]): Unit = {
+
   }
 }

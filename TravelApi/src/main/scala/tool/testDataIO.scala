@@ -24,8 +24,8 @@ object testDataIO extends App {
   }
   println("names = " + names)
   println("names list = " + names.toList)
-  d.getOrderRecord()
-
-  d.addUserRecord("u-yyy")
-  println(d.getUserRecord())
+//  d.getOrderRecord()
+//
+//  d.addUserRecord("u-yyy")
+//  println(d.getUserRecord())
 }
