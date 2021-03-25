@@ -1,5 +1,8 @@
 package tool
 
+// https://www.javatpoint.com/how-to-delete-a-file-in-java
+// https://www.w3schools.com/java/java_files_delete.asp
+
 import java.io.File
 
 object testDeleteFile extends App {

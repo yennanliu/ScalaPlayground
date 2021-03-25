@@ -1,6 +1,7 @@
 package utils
 
-import scala.reflect.io.File
+//import scala.reflect.io.File
+import java.io.File
 
 // https://mungingdata.com/scala/read-write-json/
 // https://github.com/lihaoyi/os-lib#getting-started
@@ -17,9 +18,9 @@ class DataIO{
   }
 
   def deleteFile(f:String): Unit = {
-  //    val file_path = s"/src/main/scala/data/$f"
-  //    file_path.exists(_ => File(file_path).delete())
-    File(f).delete()
+    val file:File = new File(f)
+    if (file.delete()) println(s"delete $f OK!")
+    else println(s"delete $f failed")
   }
 
   /** User IO */
