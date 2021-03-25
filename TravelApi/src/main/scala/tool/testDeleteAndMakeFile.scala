@@ -12,8 +12,9 @@ object testDeleteAndMakeFile extends App {
   Data_io.deleteFile(to_delete_path)
 
   println("make file")
-  val userId = "u-002"
-  val newUser =  ujson.Obj(userId -> "")
+  val userId = "u-001"
+  var newUser =  ujson.Obj(userId -> "")
+
   os.write.over(os.pwd/"src"/"main"/"scala"/"data"/"user.json", newUser)
 
 }

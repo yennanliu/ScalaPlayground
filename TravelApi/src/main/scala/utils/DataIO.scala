@@ -31,6 +31,7 @@ class DataIO{
     data
   }
 
+  // TODO : fix this method
   def addUserRecord(userId:String): Unit = {
     val data = getUserRecord()
     // TODO : check if there is better mechanism
