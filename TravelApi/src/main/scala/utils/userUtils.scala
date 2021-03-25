@@ -47,7 +47,7 @@ class userUtils {
     }
     userIds -= userId
     // clean user.json
-    data_io.deleteFile("/src/main/scala/data/user.json")
+    data_io.deleteFile("src/main/scala/data/user.json")
     // save current userIds to user.json
     for (i <- userIds) {
       addNewUser(i)
