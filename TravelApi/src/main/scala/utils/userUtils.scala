@@ -41,16 +41,22 @@ class userUtils {
 
   // TODO : fix this method
   def deleteUser(userId: String): Unit ={
+    val userDefaultJson = os.read(os.pwd/"src"/"main"/"scala"/"data"/"user_default.json")
+    val data = ujson.read(userDefaultJson)
     val userIds = getAllUsers()
     if (! userId.contains(userId)) {
       println(s"failed to delete userId = $userId ! ")
     }
     userIds -= userId
     // clean user.json
-    data_io.deleteFile("src/main/scala/data/user.json")
+    //data_io.deleteFile("src/main/scala/data/user.json")
     // save current userIds to user.json
     for (i <- userIds) {
-      addNewUser(i)
+      //addNewUser(i)
+      val newUser =  ujson.Obj(userId -> "")
+      data(i) = newUser
+      // sabe updated userId to user.json
+      os.write.over(os.pwd/"src"/"main"/"scala"/"data"/"user.json", data)
     }
     println(s"delete userId = $userId ok !")
   }

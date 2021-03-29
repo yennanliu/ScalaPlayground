@@ -33,6 +33,17 @@ object testDeleteAndMakeFile2 extends App {
     println(item)
   }
 
-  //os.write.over(os.pwd/"src"/"main"/"scala"/"data"/"user.json", newUser)
+  /** test to load blank json, and add userID to it and save to user.json */
+  os.read
+  val userJson = os.read(os.pwd/"src"/"main"/"scala"/"data"/"user_default.json")
+  val data = ujson.read(userJson)
 
+  println("data = " + data)
+
+  // TODO : check if there is better mechanism
+  // overwrite the file if already existed
+  val userId = "xxx"
+  val newUser =  ujson.Obj(userId -> "")
+  data(userId) = newUser
+  os.write.over(os.pwd/"src"/"main"/"scala"/"data"/"user.json", data)
 }
