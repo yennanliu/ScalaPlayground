@@ -58,6 +58,7 @@ class userUtils {
       // sabe updated userId to user.json
       os.write.over(os.pwd/"src"/"main"/"scala"/"data"/"user.json", data)
     }
+    // TODO : fix if delete user failed
     println(s"delete userId = $userId ok !")
   }
 
