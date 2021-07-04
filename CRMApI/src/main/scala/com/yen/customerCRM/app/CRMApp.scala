@@ -12,5 +12,6 @@ object App extends CRMApp
 class CRMApp extends HttpServer {
   override protected def configureHttp(router: HttpRouter): Unit = {
     router.add[AppController.getUsers]
+    router.add[AppController.getUser]
   }
 }

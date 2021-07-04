@@ -2,7 +2,6 @@ package com.yen.customerCRM.service
 
 import scala.collection.mutable.ArrayBuffer
 import scala.util.control.Breaks._
-
 import com.yen.customerCRM.bean.Customer
 
 class CustomerService {
@@ -20,6 +19,16 @@ class CustomerService {
   // get customer list
   def list(): ArrayBuffer[Customer] = {
     this.customers
+  }
+
+  //return customer with id
+  def getCustomer(id:Int):Customer = {
+      if (id < 0 || id > customers.length){
+        println("plz insert valid id")
+        // TODO : fix this
+        new Customer
+      }
+    customers(id)
   }
 
   // add new customer

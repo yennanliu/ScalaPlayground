@@ -15,4 +15,12 @@ object AppController {
         customerService.list()
     }
   }
+
+  class getUser extends Controller {
+    get("/api/v1/user/:userId") {
+      requests: Request =>
+        val userId = requests.params("userId")
+        customerService.getCustomer(userId.toInt)
+    }
+  }
 }
