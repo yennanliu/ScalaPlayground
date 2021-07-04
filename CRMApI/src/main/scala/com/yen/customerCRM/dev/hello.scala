@@ -1,4 +1,4 @@
-package com.yen.dev
+package com.yen.customerCRM.dev
 
 object hello extends App {
   println("hello !!!!")

@@ -1,4 +1,4 @@
-package com.yen.bean
+package com.yen.customerCRM.bean
 
 class Customer {
   // attr
@@ -28,5 +28,11 @@ class Customer {
     this.age = age
     this.tel = tel
     this.email = email
+  }
+
+  // method
+  // rewrite Customer's toString method
+  override def toString: String = {
+    id + "\t\t" + name + "\t\t" + gender + "\t\t" + age + "\t\t" + tel + "\t\t" + email + "\t\t"
   }
 }
