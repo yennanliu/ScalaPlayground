@@ -20,3 +20,5 @@ ScalaPostgre/project/*
 ScalaPostgre/target/*
 ScalaPostgre/.idea/
 ScalaPostgre/target/streams/*
+# CRMAPI
+CRMApI/.idea
