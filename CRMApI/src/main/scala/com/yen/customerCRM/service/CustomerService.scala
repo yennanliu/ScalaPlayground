@@ -22,13 +22,12 @@ class CustomerService {
   }
 
   //return customer with id
-  def getCustomer(id:Int):Customer = {
-      if (id < 0 || id > customers.length){
-        println("plz insert valid id")
-        // TODO : fix this
-        new Customer
+  def getCustomer(id:Int):Any = {
+      val index = findIndex(id)
+      index match{
+        case _ if index >= 0 && index < customers.length => customers(index)
+        case _ if index < 0 || index > customers.length => "invalid user id"
       }
-    customers(id)
   }
 
   // add new customer
@@ -58,6 +57,17 @@ class CustomerService {
       }
       index
     }
+
+  // method that modify customer
+  def modify(id:Int, customer:Customer):Boolean = {
+    val index = findIndex(id)
+    if (index != -1 || index < customers.length){
+      customers(index) = customer
+      true
+    } else {
+      false
+    }
+  }
 
   // method that delete customer
   def del(id:Int):Boolean = {

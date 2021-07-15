@@ -20,7 +20,7 @@ object AppController {
     get("/api/v1/user/:userId") {
       requests: Request =>
         val userId = requests.params("userId")
-        customerService.getCustomer(userId.toInt)
+        Some(customerService.getCustomer(userId.toInt))
     }
   }
 }
