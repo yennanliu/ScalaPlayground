@@ -1,9 +1,7 @@
 package com.yen.customerCRM.app
 
-import com.twitter.finagle.Server
-import com.twitter.finagle.http.Request
 import com.twitter.finatra.http.routing.HttpRouter
-import com.twitter.finatra.http.{Controller, HttpServer}
+import com.twitter.finatra.http.HttpServer
 
 import com.yen.customerCRM.controller.AppController
 
@@ -13,5 +11,7 @@ class CRMApp extends HttpServer {
   override protected def configureHttp(router: HttpRouter): Unit = {
     router.add[AppController.getUsers]
     router.add[AppController.getUser]
+    router.add[AppController.modifyUser]
+    router.add[AppController.postHelloWorld]
   }
 }
