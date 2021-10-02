@@ -1,7 +1,8 @@
 # CRM API
+- A simple API for CRM (Customer relationship management) built via finatra framework 
 
 ### Endpoints
-```
+```bash
 # 1) get all customers
 curl http://localhost:8888/api/v1/users
 
@@ -18,3 +19,4 @@ curl -X POST -H "Content-Type: application/json" \
     -d '{"id":"123", "name":"iori"}' \
     http://localhost:8888/hi 
 ```
+
