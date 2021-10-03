@@ -7,3 +7,8 @@ target
 /.project
 /.settings
 /RUNNING_PID
+project/project
+project/target
+tmp
+dist
+.cache
