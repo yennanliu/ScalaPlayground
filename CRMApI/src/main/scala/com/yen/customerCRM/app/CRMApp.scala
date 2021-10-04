@@ -14,5 +14,6 @@ class CRMApp extends HttpServer {
     router.add[AppController.modifyUser]
     router.add[AppController.deleteUser]
     router.add[AppController.postHelloWorld]
+    router.add[AppController.getHelloWorld]
   }
 }

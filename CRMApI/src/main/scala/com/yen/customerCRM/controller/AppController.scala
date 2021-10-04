@@ -25,7 +25,6 @@ object AppController {
     }
   }
 
-
   class modifyUser extends Controller {
     post("/api/v1/update") { requests: customerInfo =>
       val updatedCustomer = new Customer(requests.id, requests.name, requests.gender, requests.age, requests.tel, requests.email)
@@ -45,6 +44,15 @@ object AppController {
   class postHelloWorld extends Controller {
     post("/hi") { hiRequest: HiRequest =>
       "Hello " + hiRequest.name + " with id " + hiRequest.id
+    }
+  }
+
+  class getHelloWorld extends Controller {
+    get("/api/v1") {
+      requests: Request =>
+        val msg = "hello from CRM API !"
+        println(msg)
+        msg
     }
   }
 }
