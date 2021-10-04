@@ -70,7 +70,7 @@ class CustomerService {
   }
 
   // method that delete customer
-  def del(id:Int):Boolean = {
+  def delete(id:Int):Boolean = {
     val index = findIndex(id)
     if (index > customers.length || index < 0){
       println("plz insert valid id, delete customer failed")

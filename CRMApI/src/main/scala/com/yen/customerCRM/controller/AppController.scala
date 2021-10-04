@@ -34,6 +34,14 @@ object AppController {
     }
   }
 
+  class deleteUser extends Controller {
+    post("/api/v1/delete/:userId") {
+      requests:Request =>
+        val userId = requests.params("userId")
+        Some(customerService.delete(userId.toInt))
+    }
+  }
+
   class postHelloWorld extends Controller {
     post("/hi") { hiRequest: HiRequest =>
       "Hello " + hiRequest.name + " with id " + hiRequest.id
