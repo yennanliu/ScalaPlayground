@@ -7,7 +7,10 @@
 - dev
 
 ### Run
-- dev
+```bash
+sbt run
+# visit http://localhost:9000/
+```
 
 ### Init whole new project
 
@@ -19,4 +22,5 @@ sbt new playframework/play-scala-seed.g8
 ```
 
 ### Progress
-- https://www.playframework.com/documentation/2.8.x/PlayConsole
+- https://www.playframework.com/documentation/2.8.x/HelloWorldTutorial
+	- https://github.com/playframework/play-samples/tree/2.8.x/play-scala-starter-example
