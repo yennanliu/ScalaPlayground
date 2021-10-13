@@ -25,3 +25,8 @@ CRMApI/.idea
 CRMApI/target/scala-2.13/classes/*
 CRMApI/project/project/target/*
 CRMApI/project/target/config-classes/*
+
+urlShortener/.idea/
+urlShortener/.idea/*
+urlShortener/target/
+urlShortener/target/*
