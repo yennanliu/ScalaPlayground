@@ -10,6 +10,7 @@ object AppController {
 
   val customerService = new CustomerService
 
+  // get all users
   class getUsers extends Controller {
     get("/api/v1/users") {
       requests: Request =>
@@ -17,6 +18,7 @@ object AppController {
     }
   }
 
+  // get user
   class getUser extends Controller {
     get("/api/v1/user/:userId") {
       requests: Request =>
@@ -25,6 +27,18 @@ object AppController {
     }
   }
 
+  // add user
+  class addUser extends Controller {
+    post("/api/v1/add/:userId"){ requests: Request =>
+      //val newCustomer = new
+      val userId = requests.params("userId")
+      println("*** userId = " + userId)
+      val newCustomer =  new Customer(userId.toInt, "", 'f', 0, "", "")
+      customerService.add(newCustomer)
+    }
+  }
+
+  // update user
   class modifyUser extends Controller {
     post("/api/v1/update") { requests: customerInfo =>
       val updatedCustomer = new Customer(requests.id, requests.name, requests.gender, requests.age, requests.tel, requests.email)
@@ -33,6 +47,7 @@ object AppController {
     }
   }
 
+  // delete user
   class deleteUser extends Controller {
     post("/api/v1/delete/:userId") {
       requests:Request =>
@@ -41,12 +56,14 @@ object AppController {
     }
   }
 
+  // test API 1
   class postHelloWorld extends Controller {
     post("/hi") { hiRequest: HiRequest =>
       "Hello " + hiRequest.name + " with id " + hiRequest.id
     }
   }
 
+  // test API 2
   class getHelloWorld extends Controller {
     get("/api/v1") {
       requests: Request =>
