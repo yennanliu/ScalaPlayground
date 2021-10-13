@@ -16,6 +16,19 @@ class CustomerService {
 
   // method
 
+  // init customer db
+  def init():Unit = {
+    // init
+    val c1 = new Customer(3, "Price", 'm', 77, "00", "price@aws.com")
+    val c2 = new Customer(4, "lisa", 'f', 32, "454", "lisa@ms.com")
+
+    val newCustomers = ArrayBuffer[Customer](c1, c2)
+    for (customer <- newCustomers){
+      add(customer)
+      this.customerNum += 1
+    }
+  }
+
   // get customer list
   def list(): ArrayBuffer[Customer] = {
     this.customers

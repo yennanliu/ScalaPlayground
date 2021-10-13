@@ -10,6 +10,15 @@ object AppController {
 
   val customerService = new CustomerService
 
+  // init
+  class initUsers extends Controller {
+    post("/api/v1/init") {
+      requests: Request =>
+        println("*** init user")
+        customerService.init()
+    }
+  }
+
   // get all users
   class getUsers extends Controller {
     get("/api/v1/users") {
