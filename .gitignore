@@ -30,3 +30,5 @@ urlShortener/.idea/
 urlShortener/.idea/*
 urlShortener/target/
 urlShortener/target/*
+
+CRMApI/target/streams/

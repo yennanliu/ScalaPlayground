@@ -1,1 +1,0 @@
-["sbt.Task[scala.collection.immutable.Map[java.lang.String, scala.collection.Seq[scala.Tuple2[java.nio.file.Path, sbt.nio.FileStamp]]]]",{"2.12.10":{"hashes":[["/Users/yennan.liu/sbtDockerPOC/urlShortener/project/Dependencies.scala","d2c3619197201861085208d75d958928932a3ea5"]],"lastModifiedTimes":[]}}]
