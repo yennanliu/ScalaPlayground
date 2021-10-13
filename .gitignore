@@ -30,5 +30,8 @@ urlShortener/.idea/
 urlShortener/.idea/*
 urlShortener/target/
 urlShortener/target/*
+urlShortener/project/target/config-classes/*
+urlShortener/project/target/config-classes
+urlShortener/project/target/config-classes/*.cache
 
 CRMApI/target/streams/
