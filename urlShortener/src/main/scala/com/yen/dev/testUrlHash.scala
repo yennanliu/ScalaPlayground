@@ -1,6 +1,6 @@
 package com.yen.dev
 
-import com.yen.dev.service.urlService
+import com.yen.urlShortener.service.urlService
 
 object testUrlHash extends App {
 
