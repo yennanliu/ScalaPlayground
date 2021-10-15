@@ -18,6 +18,15 @@ object SimpleController {
     }
   }
 
+  // list hash url
+  class listAllUrl extends Controller {
+    get("/api/v1/all_url"){
+      requests:Request =>
+      val r = url_service.listUrl()
+      r
+    }
+  }
+
   // test 1
   class postHelloWorld extends Controller {
     get("/hi") { request: Request =>

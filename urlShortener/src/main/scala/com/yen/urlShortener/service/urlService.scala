@@ -2,13 +2,16 @@ package com.yen.urlShortener.service
 
 import java.security.MessageDigest
 
-abstract class baseService {
+import scala.collection.mutable.ListBuffer
+
+trait baseService {
   // attr
   val prefix:String
   var urlDict:scala.collection.mutable.Map[String, String]
 
   // method
   def hashUrl(url:String):Option[String]
+  def listUrl():String
 }
 
 class urlService extends baseService {
@@ -28,6 +31,10 @@ class urlService extends baseService {
       val value = this.urlDict.get(key)
       value
     }
+  }
+
+  override def listUrl(): String = {
+    this.urlDict.toString()
   }
 }
 
