@@ -17,7 +17,7 @@ class urlService extends baseService {
 
   override def hashUrl(url: String): Option[String] = {
     val key = url
-    
+
     if (!this.urlDict.contains(key)) {
       val value = MessageDigest.getInstance("MD5").digest(url.getBytes).toString.replace("[","")
       //val value = url.map("0123456789abcdef".indexOf(_)).reduceLeft(_ * 16 + _).toString
