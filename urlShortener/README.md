@@ -24,5 +24,8 @@ curl http://localhost:8888/api/v1/all_url
 ```
 
 ### Ref
-- https://github.com/bugthesystem/reducio
-- https://medium.com/grasswire-engineering/a-url-shortener-service-in-45-lines-of-scala-f861d4b8e5e3
+- App
+    - https://github.com/bugthesystem/reducio
+    - https://medium.com/grasswire-engineering/a-url-shortener-service-in-45-lines-of-scala-f861d4b8e5e3
+- System Design
+    - https://www.youtube.com/watch?v=JQDHz72OA3c
