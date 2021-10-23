@@ -29,3 +29,5 @@ curl http://localhost:8888/api/v1/all_url
     - https://medium.com/grasswire-engineering/a-url-shortener-service-in-45-lines-of-scala-f861d4b8e5e3
 - System Design
     - https://www.youtube.com/watch?v=JQDHz72OA3c
+- Algorithm
+    - https://github.com/yennanliu/CS_basics/blob/master/leetcode_python/Design/encode-and-decode-tinyurl.py
