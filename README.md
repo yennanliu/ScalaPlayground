@@ -79,8 +79,14 @@ sbt new scala/scala-seed.g8 -o app
 - Scala works with json
 	- https://mungingdata.com/scala/read-write-json/
 	- https://github.com/lihaoyi/os-lib#getting-started
-- Akka example code
-	- https://github.com/akka/akka-platform-guide/tree/main/docs-source/docs/modules/how-to/examples
-	- https://github.com/yennanliu/akka-sample-cluster-docker-compose-scala
+- Akka
+	- Intro
+		- https://www.baeldung.com/scala/category/akka 
+	- example code
+		- https://github.com/akka/akka-platform-guide/tree/main/docs-source/docs/modules/how-to/examples
+		- https://github.com/yennanliu/akka-sample-cluster-docker-compose-scala
+
 - Plat framework (prod ready framework, like django)
-	- https://www.playframework.com/
+	- Intro
+		- https://www.baeldung.com/scala/category/play-framework
+		- https://www.playframework.com/
