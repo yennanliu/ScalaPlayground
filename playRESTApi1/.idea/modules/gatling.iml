@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="gatling [file:/Users/yennanliu/sbtDockerPOC/playRESTApi1/]" external.linked.project.path="$MODULE_DIR$/../../gatling" external.root.project.path="$MODULE_DIR$/../.." external.system.id="SBT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output url="file://$MODULE_DIR$/../../gatling/target/scala-2.12/classes" />
+    <output-test url="file://$MODULE_DIR$/../../gatling/target/scala-2.12/gatling-classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../gatling">
+      <excludeFolder url="file://$MODULE_DIR$/../../gatling/target/streams" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="TEST" name="sbt: ch.qos.logback:logback-classic:1.2.3:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: ch.qos.logback:logback-core:1.2.3:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: com.eatthepath:fast-uuid:0.1:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: com.fasterxml.jackson.core:jackson-annotations:2.10.0:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: com.fasterxml.jackson.core:jackson-core:2.10.0:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: com.fasterxml.jackson.core:jackson-databind:2.10.0:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: com.github.ben-manes.caffeine:caffeine:2.8.0:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: com.github.scopt:scopt_2.12:3.7.1:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: com.google.errorprone:error_prone_annotations:2.3.3:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: com.softwaremill.quicklens:quicklens_2.12:1.4.12:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: com.sun.activation:javax.activation:1.2.0:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: com.tdunning:t-digest:3.1:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: com.thoughtworks.paranamer:paranamer:2.8:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: com.typesafe.akka:akka-actor_2.12:2.5.26:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: com.typesafe.akka:akka-slf4j_2.12:2.5.26:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: com.typesafe.scala-logging:scala-logging_2.12:3.9.2:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: com.typesafe:config:1.4.0:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.burt:jmespath-core:0.4.0:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.burt:jmespath-jackson:0.4.0:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.gatling.highcharts:gatling-charts-highcharts:3.3.1:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.gatling:gatling-app:3.3.1:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.gatling:gatling-charts:3.3.1:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.gatling:gatling-commons:3.3.1:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.gatling:gatling-core:3.3.1:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.gatling:gatling-graphite:3.3.1:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.gatling:gatling-http-client:3.3.1:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.gatling:gatling-http:3.3.1:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.gatling:gatling-jdbc:3.3.1:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.gatling:gatling-jms:3.3.1:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.gatling:gatling-netty-util:3.3.1:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.gatling:gatling-recorder:3.3.1:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.gatling:gatling-redis:3.3.1:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.gatling:gatling-test-framework:3.3.1:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.gatling:jsonpath_2.12:0.7.0:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.netty:netty-buffer:4.1.42.Final:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.netty:netty-codec-dns:4.1.42.Final:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.netty:netty-codec-http2:4.1.42.Final:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.netty:netty-codec-http:4.1.42.Final:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.netty:netty-codec-socks:4.1.42.Final:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.netty:netty-codec:4.1.42.Final:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.netty:netty-common:4.1.42.Final:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.netty:netty-handler-proxy:4.1.42.Final:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.netty:netty-handler:4.1.42.Final:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.netty:netty-resolver-dns:4.1.42.Final:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.netty:netty-resolver:4.1.42.Final:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.netty:netty-tcnative-boringssl-static:2.0.26.Final:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.netty:netty-transport-native-epoll:4.1.42.Final:linux-x86_64:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.netty:netty-transport-native-unix-common:4.1.42.Final:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.netty:netty-transport:4.1.42.Final:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.pebbletemplates:pebble:3.1.0:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: io.suzaku:boopickle_2.12:1.3.1:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: javax.jms:javax.jms-api:2.0.1:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: net.debasishg:redisclient_2.12:3.10:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: net.sf.saxon:Saxon-HE:9.9.1-5:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.apache.commons:commons-pool2:2.6.0:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.bouncycastle:bcpkix-jdk15on:1.64:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.bouncycastle:bcprov-jdk15on:1.64:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.checkerframework:checker-qual:2.10.0:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.hdrhistogram:HdrHistogram:2.1.11:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.jodd:jodd-core:5.0.13:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.jodd:jodd-lagarto:5.0.13:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.jodd:jodd-log:5.0.13:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.json4s:json4s-ast_2.12:3.6.7:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.json4s:json4s-core_2.12:3.6.7:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.json4s:json4s-jackson_2.12:3.6.7:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.json4s:json4s-scalap_2.12:3.6.7:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scala-lang.modules:scala-java8-compat_2.12:0.9.0:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scala-lang.modules:scala-parser-combinators_2.12:1.1.2:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scala-lang.modules:scala-swing_2.12:2.1.1:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scala-lang.modules:scala-xml_2.12:1.2.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-lang:scala-library:2.12.13:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scala-lang:scala-reflect:2.12.10:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scala-sbt:test-interface:1.0:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.simpleflatmapper:lightning-csv:8.0.3:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.simpleflatmapper:sfm-util:8.0.3:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.slf4j:slf4j-api:1.7.28:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.typelevel:spire-macros_2.12:0.16.2:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.unbescape:unbescape:1.1.6.RELEASE:jar" level="project" />
+    <orderEntry type="module-library">
+      <library name="sbt: unmanaged-sources-and-docs">
+        <CLASSES />
+        <JAVADOC>
+          <root url="jar://$USER_HOME$/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-transport-native-epoll/4.1.42.Final/netty-transport-native-epoll-4.1.42.Final-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://$USER_HOME$/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-transport-native-epoll/4.1.42.Final/netty-transport-native-epoll-4.1.42.Final-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>
