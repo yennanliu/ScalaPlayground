@@ -1,1 +1,1 @@
-["sbt.Task[scala.collection.immutable.Map[java.lang.String, scala.collection.Seq[scala.Tuple2[java.nio.file.Path, sbt.nio.FileStamp]]]]",{"2.13.6":{"hashes":[],"lastModifiedTimes":[]}}]
+["sbt.Task[scala.collection.immutable.Map[java.lang.String, scala.collection.Seq[scala.Tuple2[java.nio.file.Path, sbt.nio.FileStamp]]]]",{"2.13.6":{"hashes":[["/Users/yennanliu/sbtDockerPOC/playRESTApi1/src/main/scala/com/yen/playRESTApi1/dev/test.scala","74ccf51b4300cf3cc9bc393f59e8e3890c593325"]],"lastModifiedTimes":[]}}]

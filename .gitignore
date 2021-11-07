@@ -35,3 +35,10 @@ urlShortener/project/target/config-classes
 urlShortener/project/target/config-classes/*.cache
 
 CRMApI/target/streams/
+
+# playRESTApi1
+playRESTApi1/.idea
+playRESTApi1/project
+playRESTApi1/docs/target
+playRESTApi1/gatling
+playRESTApi1/target
