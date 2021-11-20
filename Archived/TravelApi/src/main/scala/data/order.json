@@ -1,0 +1,16 @@
+{
+    "orders" : {
+        "o0001" : {
+            "prod_name" : "a_hotel",
+            "price" : 999
+        },
+        "o0002" : {
+            "prod_name" : "b_hotel",
+            "price" : 10
+        },
+        "o0003" : {
+            "prod_name" : "c_cafe",
+            "price" : 50
+        }
+    }
+}
