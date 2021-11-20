@@ -1,7 +1,10 @@
 ## SBT Docker POC
-- Create a simple Scala application via sbt above Docker
+- Create a various Scala POC apps with/without sbt Docker
 
 ## Quick Start
+<details>
+<summary>Quick Start</summary>
+
 - [Basic Example](./BasicExample)
 ```bash
 # BasicExample
@@ -50,7 +53,6 @@ sbt clean assembly
 java -cp target/scala-2.11/FinatraHelloWorld-assembly-1.0.jar com.twitter.server.FinatraApp
 ```
 
-- [TravelAPI](./TravelApi)
 ```bash
 # dev
 ```
@@ -70,8 +72,12 @@ sbt new scala/scala-seed.g8 -o app
 # then the file structure should look like below, if success
 
 ```
+</details>
 
 ## Ref
+<details>
+<summary>Ref</summary>
+
 - https://velvia.github.io/Docker-Scala-Sbt/
 - https://www.scala-sbt.org/sbt-native-packager/formats/docker.html
 - https://github.com/marcuslonnberg/sbt-docker
@@ -90,3 +96,4 @@ sbt new scala/scala-seed.g8 -o app
 	- Intro
 		- https://www.baeldung.com/scala/category/play-framework
 		- https://www.playframework.com/
+</details>
