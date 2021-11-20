@@ -5,6 +5,9 @@ import com.twitter.finatra.http.HttpServer
 
 import com.yen.urlShortener.controller.SimpleController
 
+/** url shorten app */
+
+// entry point
 object App extends urlApp
 
 class urlApp extends HttpServer {

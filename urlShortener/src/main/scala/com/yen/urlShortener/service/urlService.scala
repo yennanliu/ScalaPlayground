@@ -2,8 +2,10 @@ package com.yen.urlShortener.service
 
 import java.security.MessageDigest
 
-import scala.collection.mutable.ListBuffer
 import com.yen.urlShortener.common.common.reverseHashMap
+
+/** service for app */
+
 
 trait baseService {
   // attr

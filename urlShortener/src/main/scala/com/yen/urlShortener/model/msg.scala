@@ -1,5 +1,7 @@
 package com.yen.urlShortener.model
 
+/** case class for customized data structure */
+
 class msg {
 }
 
