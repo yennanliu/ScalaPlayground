@@ -2,7 +2,7 @@ package com.yen.urlShortener.controller
 
 import com.twitter.finatra.http.Controller
 import com.twitter.finagle.http.Request
-import com.yen.urlShortener.model.urlRequest
+import com.yen.urlShortener.model.{hashCodeRequest, urlRequest}
 import com.yen.urlShortener.service.urlService
 
 object SimpleController {
@@ -24,6 +24,16 @@ object SimpleController {
       requests:Request =>
       val r = url_service.listUrl()
       r
+    }
+  }
+
+  // reverse hashcode to url
+  class revereHashcode extends Controller {
+    post("/api/v1/reverse"){
+      requests:hashCodeRequest =>
+        val code = requests.code
+        val r = url_service.reverseHash(code)
+        r
     }
   }
 

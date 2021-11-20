@@ -21,6 +21,12 @@ curl -X POST -H "Content-Type: application/json" \
 
 # 2) list url
 curl http://localhost:8888/api/v1/all_url
+
+# 3) reverse hashcode
+# get hashcode from step 1)
+curl -X POST -H "Content-Type: application/json" \
+    -d '{"code":"B@7cb21c0b"}' \
+    http://localhost:8888/api/v1/reverse
 ```
 
 ### Ref

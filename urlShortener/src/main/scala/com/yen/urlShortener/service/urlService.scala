@@ -3,6 +3,7 @@ package com.yen.urlShortener.service
 import java.security.MessageDigest
 
 import scala.collection.mutable.ListBuffer
+import com.yen.urlShortener.common.common.reverseHashMap
 
 trait baseService {
   // attr
@@ -12,6 +13,7 @@ trait baseService {
   // method
   def hashUrl(url:String):Option[String]
   def listUrl():String
+  def reverseHash(hashCode:String):Option[String]
 }
 
 class urlService extends baseService {
@@ -24,7 +26,7 @@ class urlService extends baseService {
     if (!this.urlDict.contains(key)) {
       val value = MessageDigest.getInstance("MD5").digest(url.getBytes).toString.replace("[","")
       //val value = url.map("0123456789abcdef".indexOf(_)).reduceLeft(_ * 16 + _).toString
-      this.urlDict += (key -> value)
+      this.urlDict += (key.toString -> value)
       Option(value)
     }else{
       println("url already in map, will reuse it")
@@ -35,6 +37,17 @@ class urlService extends baseService {
 
   override def listUrl(): String = {
     this.urlDict.toString()
+  }
+
+  override def reverseHash(hashCode: String): Option[String] = {
+    val reversedUrlDict = reverseHashMap(this.urlDict)
+    if (reversedUrlDict.contains(hashCode)){
+      println("hashcode exist")
+      Option(reversedUrlDict(hashCode))
+    }else{
+      println("reversedUrlDict list : " + reversedUrlDict)
+      throw new RuntimeException("hashcode not exists")
+    }
   }
 }
 

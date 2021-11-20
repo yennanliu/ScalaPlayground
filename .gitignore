@@ -25,7 +25,7 @@ CRMApI/.idea
 CRMApI/target/scala-2.13/classes/*
 CRMApI/project/project/target/*
 CRMApI/project/target/config-classes/*
-
+# urlShortener
 urlShortener/.idea/
 urlShortener/.idea/*
 urlShortener/target/
@@ -33,9 +33,11 @@ urlShortener/target/*
 urlShortener/project/target/config-classes/*
 urlShortener/project/target/config-classes
 urlShortener/project/target/config-classes/*.cache
-
+urlShortener/project/target/streams
+urlShortener/project/target/streams/*
+urlShortener/project/target
+# CRMApI
 CRMApI/target/streams/
-
 # playRESTApi1
 playRESTApi1/.idea
 playRESTApi1/project
