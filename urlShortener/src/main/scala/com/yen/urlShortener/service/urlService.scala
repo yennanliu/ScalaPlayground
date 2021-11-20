@@ -18,7 +18,7 @@ trait baseService {
 
 class urlService extends baseService {
   val prefix = "https://yen.shorturl/"
-  var urlDict= scala.collection.mutable.Map(""->"")
+  var urlDict= scala.collection.mutable.Map.empty[String,String]
 
   override def hashUrl(url: String): Option[String] = {
     val key = url
