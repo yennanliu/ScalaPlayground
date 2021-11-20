@@ -1,5 +1,5 @@
 ## SBT Docker POC
-- Create a various Scala POC apps with/without sbt Docker
+- Create various Scala POC apps with/without sbt Docker
 
 ## Quick Start
 <details>
@@ -53,14 +53,8 @@ sbt clean assembly
 java -cp target/scala-2.11/FinatraHelloWorld-assembly-1.0.jar com.twitter.server.FinatraApp
 ```
 
-```bash
-# dev
-```
-* endpoints:
-	- http://localhost:8888/hello
-	- http://localhost:8888/users
-	- http://localhost:8888/orders
-	- http://localhost:8888/add_user/<user_id>
+- [urlShortener](./urlShortener) : URL shortener app
+- [CRMApI](./CRMApI) : CRM demo API
 
 ## Inin the project
 ```bash
@@ -78,10 +72,11 @@ sbt new scala/scala-seed.g8 -o app
 <details>
 <summary>Ref</summary>
 
-- https://velvia.github.io/Docker-Scala-Sbt/
-- https://www.scala-sbt.org/sbt-native-packager/formats/docker.html
-- https://github.com/marcuslonnberg/sbt-docker
-- https://ithelp.ithome.com.tw/articles/10192036
+- sbt Docker
+	- https://velvia.github.io/Docker-Scala-Sbt/
+	- https://www.scala-sbt.org/sbt-native-packager/formats/docker.html
+	- https://github.com/marcuslonnberg/sbt-docker
+	- https://ithelp.ithome.com.tw/articles/10192036
 - Scala works with json
 	- https://mungingdata.com/scala/read-write-json/
 	- https://github.com/lihaoyi/os-lib#getting-started
@@ -91,9 +86,9 @@ sbt new scala/scala-seed.g8 -o app
 	- example code
 		- https://github.com/akka/akka-platform-guide/tree/main/docs-source/docs/modules/how-to/examples
 		- https://github.com/yennanliu/akka-sample-cluster-docker-compose-scala
-
 - Plat framework (prod ready framework, like django)
 	- Intro
 		- https://www.baeldung.com/scala/category/play-framework
 		- https://www.playframework.com/
+
 </details>
