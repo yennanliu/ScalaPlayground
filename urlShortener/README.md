@@ -31,6 +31,26 @@ curl -X POST -H "Content-Type: application/json" \
     http://localhost:8888/api/v1/reverse
 ```
 
+### Commands
+```bash
+#-----------------
+# PART 1 : Redis
+#-----------------
+
+# 1) Mac download redis
+brew install redis
+
+# 2) start redis local
+brew services restart redis
+# start server
+redis-server
+# access redis via CLI
+redis-cli
+
+# test dedis
+redis-cli ping
+```
+
 ### Ref
 - App
     - https://github.com/bugthesystem/reducio

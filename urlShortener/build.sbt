@@ -11,10 +11,10 @@ lazy val versions = new {
 
 libraryDependencies ++= Seq(
   // config
-  "com.typesafe" % "config" % "1.2.1", 
+  "com.typesafe" % "config" % "1.2.1",
+
   // time
   "joda-time" % "joda-time" % "2.9.9",
-
   "org.slf4j" % "slf4j-nop" % "1.6.4",
 
   // scalatest
@@ -42,7 +42,10 @@ libraryDependencies ++= Seq(
   "com.twitter" %% "inject-server" % versions.finatra % "test",
   "com.twitter" %% "inject-app" % versions.finatra % "test",
   "com.twitter" %% "inject-core" % versions.finatra % "test",
-  "com.twitter" %% "inject-modules" % versions.finatra % "test"
+  "com.twitter" %% "inject-modules" % versions.finatra % "test",
+
+  // redis
+  "com.github.etaty" %% "rediscala" % "1.8.0"
 )
 
 conflictManager := ConflictManager.latestRevision
