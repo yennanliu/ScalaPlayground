@@ -1,6 +1,8 @@
 ## urlShortener
 
 ### Endpoints
+- finatra health page : http://localhost:9990
+
 ```bash
 # 1) short url
 curl -X POST -H "Content-Type: application/json" \
@@ -37,3 +39,6 @@ curl -X POST -H "Content-Type: application/json" \
     - https://www.youtube.com/watch?v=JQDHz72OA3c
 - Algorithm
     - https://github.com/yennanliu/CS_basics/blob/master/leetcode_python/Design/encode-and-decode-tinyurl.py
+- Redis client
+    - https://github.com/etaty/rediscala
+         https://github.com/bugthesystem/reducio/blob/master/build.sbt

@@ -36,6 +36,7 @@ urlShortener/project/target/config-classes/*.cache
 urlShortener/project/target/streams
 urlShortener/project/target/streams/*
 urlShortener/project/target
+urlShortener/project/target/*
 # CRMApI
 CRMApI/target/streams/
 # playRESTApi1
