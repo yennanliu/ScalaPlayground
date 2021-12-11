@@ -33,15 +33,21 @@ curl -X POST -H "Content-Type: application/json" \
 
 ### Commands
 ```bash
-#-----------------
+#-----------------------
 # PART 1 : Redis
-#-----------------
+#-----------------------
 
 # 1) Mac download redis
 brew install redis
 
-# 2) start redis local
+# 2)
+# start 
+brew services start redis
+# restart
 brew services restart redis
+# stop
+brew services restart redis
+
 # start server
 redis-server
 # access redis via CLI
