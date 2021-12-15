@@ -5,7 +5,6 @@ package com.yen.dev
 // https://github.com/etaty/rediscala-demo/blob/master/src/main/scala/ExampleByteStringFormatter.scala
 
 import akka.util.ByteString
-import com.yen.dev.redisTest1.futurePong
 import redis.api.keys.Exists
 import redis.{ByteStringFormatter, ByteStringSerializer, RedisClient}
 

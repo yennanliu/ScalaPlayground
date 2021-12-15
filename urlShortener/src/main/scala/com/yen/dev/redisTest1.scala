@@ -22,10 +22,13 @@ object redisTest extends App {
   println("redis.password = " + redis.password)
 
   val futurePong = redis.ping()
+
   println("Ping sent!")
+
   futurePong.map(pong => {
     println(s"Redis replied with a $pong")
   })
+
   Await.result(futurePong, 5 seconds)
 
   akkaSystem.terminate()
