@@ -45,7 +45,7 @@ object Redis{
       }
     })
 
-    Await.result(r, 10 seconds)
+    Await.result(r, 1 seconds)
     akkaSystem.terminate()
 
     res

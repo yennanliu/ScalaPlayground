@@ -5,12 +5,13 @@ package com.yen.urlShortener.service
 import java.security.MessageDigest
 
 import com.yen.urlShortener.common.common.reverseHashMap
-
+import com.yen.urlShortener.redis.Redis
 
 trait baseService {
   // attr
   val prefix:String
   var urlDict:scala.collection.mutable.Map[String, String]
+  var sendToRedis:Boolean
 
   // method
   def hashUrl(url:String):Option[String]
@@ -21,15 +22,26 @@ trait baseService {
 class urlService extends baseService {
   val prefix = "https://yen.shorturl/"
   var urlDict= scala.collection.mutable.Map.empty[String,String]
+  var sendToRedis=true
 
   override def hashUrl(url: String): Option[String] = {
     val key = url
 
     if (!this.urlDict.contains(key)) {
+
       val value = MessageDigest.getInstance("MD5").digest(url.getBytes).toString.replace("[","")
       //val value = url.map("0123456789abcdef".indexOf(_)).reduceLeft(_ * 16 + _).toString
+      println(s"key = $key, value = $value")
       this.urlDict += (key.toString -> value)
+
+      // send to redis
+      // TODO : fix java.util.concurrent.TimeoutException: Futures timed out after [1 second]
+      if(sendToRedis){
+        val res = Redis.putValue(key, value)
+        println("put key to Redis ... " + res)
+      }
       Option(value)
+
     }else{
       println("url already in map, will reuse it")
       val value = this.urlDict.get(key)
