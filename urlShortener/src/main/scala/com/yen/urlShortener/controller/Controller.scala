@@ -7,7 +7,7 @@ import com.twitter.finagle.http.Request
 import com.yen.urlShortener.model.{hashCodeRequest, urlRequest}
 import com.yen.urlShortener.service.urlService
 
-object SimpleController {
+object Controller {
 
   val url_service = new urlService()
 
