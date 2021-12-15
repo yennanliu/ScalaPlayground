@@ -1,0 +1,51 @@
+package com.yen.urlShortener.redis
+
+/** Redis client object */
+
+import akka.util.ByteString
+import redis.RedisClient
+
+import scala.concurrent.Await
+import scala.concurrent.duration._
+import scala.concurrent.ExecutionContext.Implicits.global
+
+class Redis {
+
+}
+
+object Redis{
+
+  def putValue(key:String, value: String):Boolean={
+
+    var res = true
+
+    implicit val akkaSystem = akka.actor.ActorSystem()
+
+    val redis = RedisClient()
+    val redisTransaction = redis.transaction()
+
+    val set = redisTransaction.set(key, value)
+    val get = redisTransaction.get(key)
+
+    redisTransaction.exec()
+    val r = for {
+      s <- set
+      g <- get
+    } yield {
+      println("s = " + s)
+      println("g = " + g)
+    }
+
+    get.onFailure({
+      case error => {
+        println(s"put into Redis failed : $error")
+        res = false
+      }
+    })
+
+    Await.result(r, 10 seconds)
+    akkaSystem.terminate()
+
+    res
+  }
+}
