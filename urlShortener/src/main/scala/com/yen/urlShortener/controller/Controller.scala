@@ -1,13 +1,13 @@
 package com.yen.urlShortener.controller
 
+/** controller for app */
+
 import com.twitter.finatra.http.Controller
 import com.twitter.finagle.http.Request
 import com.yen.urlShortener.model.{hashCodeRequest, urlRequest}
 import com.yen.urlShortener.service.urlService
 
-/** controller for app */
-
-object SimpleController {
+object Controller {
 
   val url_service = new urlService()
 

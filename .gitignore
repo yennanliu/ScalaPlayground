@@ -36,6 +36,8 @@ urlShortener/project/target/config-classes/*.cache
 urlShortener/project/target/streams
 urlShortener/project/target/streams/*
 urlShortener/project/target
+urlShortener/project/target/*
+urlShortener/project/target/scala-2.12/sbt-1.0/update
 # CRMApI
 CRMApI/target/streams/
 # playRESTApi1
