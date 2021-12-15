@@ -1,10 +1,10 @@
 package com.yen.urlShortener.service
 
+/** service for app */
+
 import java.security.MessageDigest
 
 import com.yen.urlShortener.common.common.reverseHashMap
-
-/** service for app */
 
 
 trait baseService {

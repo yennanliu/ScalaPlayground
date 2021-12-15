@@ -1,6 +1,6 @@
 package com.yen.urlShortener.common
 
-/** for common functions */
+/** common functions */
 
 object common {
 

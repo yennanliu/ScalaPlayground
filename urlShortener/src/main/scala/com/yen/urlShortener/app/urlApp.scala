@@ -1,11 +1,11 @@
 package com.yen.urlShortener.app
 
+/** url shorten app */
+
 import com.twitter.finatra.http.routing.HttpRouter
 import com.twitter.finatra.http.HttpServer
 
 import com.yen.urlShortener.controller.SimpleController
-
-/** url shorten app */
 
 // entry point
 object App extends urlApp
