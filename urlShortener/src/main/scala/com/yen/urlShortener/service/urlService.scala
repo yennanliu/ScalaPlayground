@@ -17,6 +17,7 @@ trait baseService {
   def hashUrl(url:String):Option[String]
   def listUrl():String
   def reverseHash(hashCode:String):Option[String]
+  def deleteCache(key:String)
 }
 
 class urlService extends baseService {
@@ -61,6 +62,15 @@ class urlService extends baseService {
     }else{
       println("reversedUrlDict list : " + reversedUrlDict)
       throw new RuntimeException("hashcode not exists")
+    }
+  }
+
+  override def deleteCache(key: String): Unit = {
+    try{
+     Redis.deleteValue(key)
+    }catch{
+      case e:RuntimeException => println(s"deleteCache failed : $e")
+      case _:Throwable => println(s"deleteCache failed")
     }
   }
 }

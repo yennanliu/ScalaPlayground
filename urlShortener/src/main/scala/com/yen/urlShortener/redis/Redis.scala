@@ -50,4 +50,22 @@ object Redis{
 
     res
   }
+
+  def deleteValue(key:String):Unit={
+
+    val del = redisTransaction.del(key)
+
+    println(s"delete key : $key ...")
+
+    redisTransaction.exec()
+
+    val r = for {
+      d <- del
+    } yield {
+      println("d = " + d)
+    }
+
+    Await.result(r, 1 seconds)
+    akkaSystem.terminate()
+  }
 }

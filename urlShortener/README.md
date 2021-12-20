@@ -29,6 +29,10 @@ curl http://localhost:8888/api/v1/all_url
 curl -X POST -H "Content-Type: application/json" \
     -d '{"code":"B@6a7b5ddc"}' \
     http://localhost:8888/api/v1/reverse
+
+# 4) delete key
+curl http://localhost:8888/api/v1/remove/<key>
+#curl http://localhost:8888/api/v1/remove/https://www.python.org/
 ```
 
 ### Commands

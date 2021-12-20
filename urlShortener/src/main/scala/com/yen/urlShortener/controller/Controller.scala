@@ -4,7 +4,7 @@ package com.yen.urlShortener.controller
 
 import com.twitter.finatra.http.Controller
 import com.twitter.finagle.http.Request
-import com.yen.urlShortener.model.{hashCodeRequest, urlRequest}
+import com.yen.urlShortener.model.{hashCodeRequest, redisKeyRequest, urlRequest}
 import com.yen.urlShortener.service.urlService
 
 object Controller {
@@ -36,6 +36,15 @@ object Controller {
         val code = requests.code
         val r = url_service.reverseHash(code)
         r
+    }
+  }
+
+  // reverse hashcode to url
+  class removeKey extends Controller {
+    post("/api/v1/remove/:key"){
+      requests:redisKeyRequest =>
+        val key = requests.key
+        url_service.deleteCache(key)
     }
   }
 
