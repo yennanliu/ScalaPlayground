@@ -9,6 +9,8 @@ import scala.concurrent.Await
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global
 
+/** Demo : add Redis record with key, value */
+
 object redisTest3 extends App {
 
   implicit val akkaSystem = akka.actor.ActorSystem()

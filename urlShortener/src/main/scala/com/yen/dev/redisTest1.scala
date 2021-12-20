@@ -8,6 +8,8 @@ import scala.concurrent.Await
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global
 
+/** Demo : connect to local Redis server and print connection parameters */
+
 object redisTest extends App {
 
   implicit val akkaSystem = akka.actor.ActorSystem()

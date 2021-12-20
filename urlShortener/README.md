@@ -46,7 +46,7 @@ brew services start redis
 # restart
 brew services restart redis
 # stop
-brew services restart redis
+brew services stop redis
 
 # start server
 redis-server
