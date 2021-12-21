@@ -41,7 +41,8 @@ object Controller {
 
   // reverse hashcode to url
   class removeKey extends Controller {
-    post("/api/v1/remove/:key"){
+    // TODO : fix this (use get for now)
+    get("/api/v1/remove/:key"){
       requests:redisKeyRequest =>
         val key = requests.key
         url_service.deleteCache(key)

@@ -32,13 +32,17 @@ class urlService extends baseService {
 
       val value = MessageDigest.getInstance("MD5").digest(url.getBytes).toString.replace("[","")
       //val value = url.map("0123456789abcdef".indexOf(_)).reduceLeft(_ * 16 + _).toString
-      println(s"key = $key, value = $value")
-      this.urlDict += (key.toString -> value)
+
+      // TODO : optimize below
+      val keyNormalized = key.split("://")(1).replace("/","")
+
+      println(s"key = $keyNormalized, value = $value")
+      this.urlDict += (keyNormalized.toString -> value)
 
       // send to redis
       // TODO : fix java.util.concurrent.TimeoutException: Futures timed out after [1 second]
       if(sendToRedis){
-        val res = Redis.putValue(key, value)
+        val res = Redis.putValue(keyNormalized, value)
         println("put key to Redis ... " + res)
       }
       Option(value)
@@ -65,6 +69,7 @@ class urlService extends baseService {
     }
   }
 
+  // TODO : fix this
   override def deleteCache(key: String): Unit = {
     try{
      Redis.deleteValue(key)
