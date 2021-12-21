@@ -25,18 +25,33 @@ object Redis{
   // method
   def putValue(key:String, value: String):Boolean={
 
-    val set = redisTransaction.set(key, value)
+//    val set = redisTransaction.set(key, value)
+//    val get = redisTransaction.get(key)
+//
+//    redisTransaction.exec()
+//
+//    val r = for {
+//      s <- set
+//      g <- get
+//    } yield {
+//      println("s = " + s)
+//      println("g = " + g)
+//    }
+//
+//    get.onFailure({
+//      case error => {
+//        println(s"put into Redis failed : $error")
+//        res = false
+//      }
+//    })
+//
+//    Await.result(r, 1 seconds)
+//    akkaSystem.terminate()
+//
+//    res
+
+    redis.set(key, value)
     val get = redisTransaction.get(key)
-
-    redisTransaction.exec()
-
-    val r = for {
-      s <- set
-      g <- get
-    } yield {
-      println("s = " + s)
-      println("g = " + g)
-    }
 
     get.onFailure({
       case error => {
@@ -44,9 +59,6 @@ object Redis{
         res = false
       }
     })
-
-    Await.result(r, 1 seconds)
-    akkaSystem.terminate()
 
     res
   }

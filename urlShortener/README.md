@@ -13,6 +13,9 @@ curl -X POST -H "Content-Type: application/json" \
     -d '{"url":"https://docs.scala-lang.org/ja/tour/tour-of-scala.html"}' \
     http://localhost:8888/api/v1/short
 
+curl -X POST -H "Content-Type: application/json" \
+    -d '{"url":"https://github.com/apache/spark"}' \
+    http://localhost:8888/api/v1/short
 
 # for url in https://github.com/ https://java.com/ja/
 #     do

@@ -15,6 +15,7 @@ class urlApp extends HttpServer {
     router.add[Controller.shortenUrl]
     router.add[Controller.listAllUrl]
     router.add[Controller.revereHashcode]
+    router.add[Controller.removeKey]
     router.add[Controller.postHelloWorld]
   }
 }
