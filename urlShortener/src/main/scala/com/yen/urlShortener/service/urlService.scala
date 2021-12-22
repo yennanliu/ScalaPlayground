@@ -11,7 +11,7 @@ trait baseService {
   // attr
   val prefix:String
   var urlDict:scala.collection.mutable.Map[String, String]
-  var sendToRedis:Boolean
+  var useRedis:Boolean
 
   // method
   def hashUrl(url:String):Option[String]
@@ -23,7 +23,7 @@ trait baseService {
 class urlService extends baseService {
   val prefix = "https://yen.shorturl/"
   var urlDict= scala.collection.mutable.Map.empty[String,String]
-  var sendToRedis=true
+  var useRedis=true
 
   override def hashUrl(url: String): Option[String] = {
     val key = url
@@ -41,7 +41,7 @@ class urlService extends baseService {
 
       // send to redis
       // TODO : fix java.util.concurrent.TimeoutException: Futures timed out after [1 second]
-      if(sendToRedis){
+      if(useRedis){
         val res = Redis.putValue(keyNormalized, value)
         println("put key to Redis ... " + res)
       }
@@ -55,7 +55,14 @@ class urlService extends baseService {
   }
 
   override def listUrl(): String = {
-    this.urlDict.toString()
+    if (useRedis){
+      // TODO : fix to read from Redis
+      this.urlDict.keys.foreach(println(_))
+      this.urlDict.keys.toString()
+    }else{
+      this.urlDict.keys.foreach(println(_))
+      this.urlDict.keys.toString()
+    }
   }
 
   override def reverseHash(hashCode: String): Option[String] = {

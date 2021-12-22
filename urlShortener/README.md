@@ -62,6 +62,14 @@ redis-cli
 
 # test dedis
 redis-cli ping
+
+#-----------------------
+# PART 2 : Redis CLI
+#-----------------------
+
+# 1) get all keys
+# https://chartio.com/resources/tutorials/how-to-get-all-keys-in-redis/
+127.0.0.1:6379> keys *
 ```
 
 ### Ref
