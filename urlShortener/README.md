@@ -1,4 +1,9 @@
-## urlShortener
+# UrlShortener
+- A url shorten app via scala
+- Fratures
+    - long url -> short url
+    - short url -> long url
+    - show all shorten url
 
 ### Endpoints
 - finatra health page : http://localhost:9990
@@ -80,6 +85,7 @@ redis-cli ping
     - https://www.youtube.com/watch?v=JQDHz72OA3c
 - Algorithm
     - https://github.com/yennanliu/CS_basics/blob/master/leetcode_python/Design/encode-and-decode-tinyurl.py
+    - https://leetcode.com/discuss/interview-question/124658/Design-a-URL-Shortener-(-TinyURL-)-System/
 - Redis client
     - https://github.com/etaty/rediscala
          https://github.com/bugthesystem/reducio/blob/master/build.sbt

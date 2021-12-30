@@ -4,6 +4,7 @@ package com.yen.urlShortener.controller
 
 import com.twitter.finatra.http.Controller
 import com.twitter.finagle.http.Request
+
 import com.yen.urlShortener.model.{hashCodeRequest, redisKeyRequest, urlRequest}
 import com.yen.urlShortener.service.urlService
 
