@@ -36,7 +36,7 @@ object Controller {
       requests:hashCodeRequest =>
         val code = requests.code
         val r = url_service.reverseHash(code)
-        r
+        r.getOrElse("hashcode not exists")
     }
   }
 
