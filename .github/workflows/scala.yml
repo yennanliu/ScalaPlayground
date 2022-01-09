@@ -25,4 +25,6 @@ jobs:
       run: cd akkahttp-docker-example && sbt docker:publishLocal
     - name: Check results
       run: docker ps -a  && docker images
+    - name: Build urlShortener
+      run: cd urlShortener && sbt test && sbt assembly
       
