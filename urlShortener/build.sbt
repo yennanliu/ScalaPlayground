@@ -45,7 +45,8 @@ libraryDependencies ++= Seq(
   "com.twitter" %% "inject-modules" % versions.finatra % "test",
 
   // redis
-  "com.github.etaty" %% "rediscala" % "1.8.0"
+  "com.github.etaty" %% "rediscala" % "1.8.0",
+  "net.debasishg" %% "redisclient" % "3.41"
 )
 
 conflictManager := ConflictManager.latestRevision

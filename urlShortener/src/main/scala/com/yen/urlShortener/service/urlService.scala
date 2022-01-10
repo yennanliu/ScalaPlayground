@@ -5,7 +5,8 @@ package com.yen.urlShortener.service
 import java.security.MessageDigest
 
 import com.yen.urlShortener.common.common.reverseHashMap
-import com.yen.urlShortener.redis.Redis
+//import com.yen.urlShortener.redis.Redis
+import com.yen.urlShortener.redis.RedisV2
 
 trait baseService {
   // attr
@@ -42,7 +43,8 @@ class urlService extends baseService {
       // send to redis
       // TODO : fix java.util.concurrent.TimeoutException: Futures timed out after [1 second]
       if(useRedis){
-        val res = Redis.putValue(keyNormalized, value)
+        //val res = Redis.putValue(keyNormalized, value)
+        val res = RedisV2.putValue(keyNormalized, value)
         println("put key to Redis ... " + res)
       }
       Option(value)
@@ -80,7 +82,8 @@ class urlService extends baseService {
   // TODO : fix this
   override def deleteCache(key: String): Unit = {
     try{
-     Redis.deleteValue(key)
+      //Redis.deleteValue(key)
+      RedisV2.deleteValue(key)
     }catch{
       case e:RuntimeException => println(s"deleteCache failed : $e")
       case _:Throwable => println(s"deleteCache failed")
