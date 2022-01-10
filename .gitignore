@@ -38,6 +38,7 @@ urlShortener/project/target/streams/*
 urlShortener/project/target
 urlShortener/project/target/*
 urlShortener/project/target/scala-2.12/sbt-1.0/update
+urlShortener/project/project/
 # CRMApI
 CRMApI/target/streams/
 # playRESTApi1

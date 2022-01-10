@@ -90,3 +90,5 @@ redis-cli ping
 - Redis client
     - https://github.com/etaty/rediscala
          https://github.com/bugthesystem/reducio/blob/master/build.sbt
+    - https://lucianomolinari.com/2016/06/07/building-a-service-using-akka-http-and-redis-part-1-of-2/
+    - https://lucianomolinari.com/2016/06/07/building-a-service-using-akka-http-and-redis-part-2-of-2/
