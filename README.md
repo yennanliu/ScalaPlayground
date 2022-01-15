@@ -1,5 +1,5 @@
-## SBT Docker POC
-- Create various Scala POC apps with/without sbt Docker
+## Scala Play Ground
+- Build various Scala POC apps with/withput frameworks
 
 ## Quick Start
 <details>
