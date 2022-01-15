@@ -40,16 +40,6 @@ object Controller {
     }
   }
 
-  // reverse hashcode to url
-  //  class removeKey extends Controller {
-  //    // TODO : fix this (use get for now)
-  //    get("/api/v1/remove/:key"){
-  //      requests:redisKeyRequest =>
-  //        val key = requests.key
-  //        url_service.deleteCache(key)
-  //    }
-  //  }
-
   class removeKey extends Controller {
     get("/api/v1/remove/:key"){
       requests:Request =>

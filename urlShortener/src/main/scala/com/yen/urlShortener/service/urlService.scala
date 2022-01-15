@@ -2,7 +2,7 @@ package com.yen.urlShortener.service
 
 /** service for app */
 
-import com.yen.urlShortener.common.common.reverseHashMap
+import com.yen.urlShortener.common.Common.reverseHashMap
 //import com.yen.urlShortener.redis.Redis
 import com.yen.urlShortener.redis.RedisV2
 import com.yen.urlShortener.common.HashFunc
@@ -66,6 +66,7 @@ class urlService extends baseService {
     }
   }
 
+  //TODO : fix this, use key from Redis is such key not exists in tmp dict
   override def reverseHash(hashCode: String): Option[String] = {
     val reversedUrlDict = reverseHashMap(this.urlDict)
     try{

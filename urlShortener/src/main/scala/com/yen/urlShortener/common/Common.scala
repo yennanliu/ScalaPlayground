@@ -2,7 +2,7 @@ package com.yen.urlShortener.common
 
 /** common functions */
 
-object common {
+object Common {
 
   // help func
   def reverseHashMap(hashMap:scala.collection.Map[String, String]): scala.collection.Map[String, String]={
