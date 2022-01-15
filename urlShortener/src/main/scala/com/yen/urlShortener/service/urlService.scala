@@ -2,11 +2,10 @@ package com.yen.urlShortener.service
 
 /** service for app */
 
-import java.security.MessageDigest
-
 import com.yen.urlShortener.common.common.reverseHashMap
 //import com.yen.urlShortener.redis.Redis
 import com.yen.urlShortener.redis.RedisV2
+import com.yen.urlShortener.common.HashFunc
 
 trait baseService {
   // attr
@@ -31,23 +30,23 @@ class urlService extends baseService {
 
     if (!this.urlDict.contains(key)) {
 
-      val value = MessageDigest.getInstance("MD5").digest(url.getBytes).toString.replace("[","").replace("@","").split("B")(1)
-      //val value = url.map("0123456789abcdef".indexOf(_)).reduceLeft(_ * 16 + _).toString
+      /** hash the input url */
+      val hashedURL = HashFunc.getHashVal(url)
 
       // TODO : optimize below
       val keyNormalized = key.split("://")(1).replace("/","")
+      println(s"key = $keyNormalized, value = $hashedURL")
 
-      println(s"key = $keyNormalized, value = $value")
-      this.urlDict += (keyNormalized.toString -> value)
+      this.urlDict += (keyNormalized.toString -> hashedURL)
 
       // send to redis
       // TODO : fix java.util.concurrent.TimeoutException: Futures timed out after [1 second]
       if(useRedis){
         //val res = Redis.putValue(keyNormalized, value)
-        val res = RedisV2.putValue(keyNormalized, value)
+        val res = RedisV2.putValue(keyNormalized, hashedURL)
         println("put key to Redis ... " + res)
       }
-      Option(value)
+      Option(hashedURL)
 
     }else{
       println("url already in map, will reuse it")
