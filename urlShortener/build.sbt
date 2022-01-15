@@ -1,6 +1,10 @@
+
 name := "urlShortener"
+
 organization := "yen.com"
+
 version := "1.0"
+
 scalaVersion := "2.11.8"
 
 lazy val versions = new {
@@ -18,11 +22,7 @@ libraryDependencies ++= Seq(
   "org.slf4j" % "slf4j-nop" % "1.6.4",
 
   // scalatest
-  "org.scalactic" %% "scalactic" % "3.2.0",
-  "org.scalatest" %% "scalatest" % "3.2.0" % "test",
-  "org.scalatest" %% "scalatest-funsuite" % "3.2.0" % "test",
-  "org.scalatest" %% "scalatest-propspec" % "3.2.0" % "test",
-  "org.scalatest" %% "scalatest-featurespec" % "3.2.0" % "test",
+  "org.scalatest" %% "scalatest" % "3.1.1" % "test",
 
   // apache
   "org.apache.commons" % "commons-lang3" % "3.4",
