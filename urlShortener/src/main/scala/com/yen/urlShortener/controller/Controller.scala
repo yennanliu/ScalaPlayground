@@ -32,10 +32,10 @@ object Controller {
 
   // reverse hashcode to url
   class revereHashcode extends Controller {
-    post("/api/v1/reverse"){
-      requests:hashCodeRequest =>
-        val code = requests.code
-        val r = url_service.reverseHash(code)
+    get("/api/v1/reverse/:key"){
+      requests:Request =>
+        val key = requests.params("key")
+        val r = url_service.reverseHash(key)
         r.getOrElse("hashcode not exists")
     }
   }
@@ -51,7 +51,6 @@ object Controller {
   //  }
 
   class removeKey extends Controller {
-    // TODO : fix this (use get for now)
     get("/api/v1/remove/:key"){
       requests:Request =>
         val key = requests.params("key")

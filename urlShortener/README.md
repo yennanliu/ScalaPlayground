@@ -34,9 +34,11 @@ curl http://localhost:8888/api/v1/all_url
 
 # 3) reverse hashcode
 # get hashcode from step 1)
-curl -X POST -H "Content-Type: application/json" \
-    -d '{"code":"B@6a7b5ddc"}' \
-    http://localhost:8888/api/v1/reverse
+# curl -X POST -H "Content-Type: application/json" \
+#     -d '{"code":"B@6a7b5ddc"}' \
+#     http://localhost:8888/api/v1/reverse
+curl http://localhost:8888/api/v1/reverse/2a3db3bc
+
 
 # 4) delete key
 curl http://localhost:8888/api/v1/remove/<key>
