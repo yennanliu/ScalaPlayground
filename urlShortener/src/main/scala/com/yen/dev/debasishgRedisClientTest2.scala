@@ -11,4 +11,12 @@ object debasishgRedisClientTest2 extends App {
 
   val res2 = RedisV2.get("gegerger")
   println("res2 = " + res2)
+
+  RedisV2.putValue("mykey2", "123")
+
+  val del_res2 = RedisV2.deleteValue("mykey2")
+  println("del_res2 = " + del_res2)
+
+  val del_res3 = RedisV2.deleteValue("mykey2wrrgeger")
+  println("del_res3 = " + del_res3)
 }

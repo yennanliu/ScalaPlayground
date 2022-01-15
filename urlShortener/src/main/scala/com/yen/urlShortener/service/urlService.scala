@@ -18,7 +18,7 @@ trait baseService {
   def hashUrl(url:String):Option[String]
   def listUrl():String
   def reverseHash(hashCode:String):Option[String]
-  def deleteCache(key:String)
+  def deleteCache(key:String):Boolean
 }
 
 class urlService extends baseService {
@@ -80,13 +80,20 @@ class urlService extends baseService {
   }
 
   // TODO : fix this
-  override def deleteCache(key: String): Unit = {
+  override def deleteCache(key: String): Boolean = {
     try{
       //Redis.deleteValue(key)
       RedisV2.deleteValue(key)
+      true
     }catch{
-      case e:RuntimeException => println(s"deleteCache failed : $e")
-      case _:Throwable => println(s"deleteCache failed")
+      case e:RuntimeException => {
+        println(s"deleteCache failed : $e")
+        false
+      }
+      case _:Throwable => {
+        println(s"deleteCache failed")
+        false
+      }
     }
   }
 }

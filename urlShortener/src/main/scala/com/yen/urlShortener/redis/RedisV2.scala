@@ -29,16 +29,21 @@ object RedisV2{
 
   def deleteValue(key:String):Boolean={
     try{
-      r.del(key)
-      println(s"delete key : $key OK")
-      true
+      val res = r.del(key)
+      if (res == Some(1)){
+        println(s"delete key : $key OK")
+        true
+      }else{
+        println(s"deleteValue failed : $key")
+        false
+      }
     }catch {
       case r:RuntimeException => {
-        println("deleteValue failed : " + r)
+        println(s"deleteValue failed : $key " + r)
         false
       }
       case e:Exception => {
-        println("deleteValue failed : " + e.printStackTrace())
+        println(s"deleteValue failed : $key " + e.printStackTrace())
         false
       }
     }
