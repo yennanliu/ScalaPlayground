@@ -1,8 +1,6 @@
-package com.yen.urlShortener.service
+package com.yen.urlShortener.redis
 
 import org.scalatest.funsuite.AnyFunSuite
-
-import com.yen.urlShortener.redis.RedisV2
 
 class RedisV2Suite extends AnyFunSuite  {
 
