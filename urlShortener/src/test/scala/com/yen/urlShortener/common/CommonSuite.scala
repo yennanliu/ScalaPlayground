@@ -3,6 +3,7 @@ package com.yen.urlShortener.common
 import org.scalatest.funsuite.AnyFunSuite
 
 class CommonSuite extends AnyFunSuite {
+
   test("test reverseHashMap"){
 
     val myMap1:scala.collection.Map[String, String] = scala.collection.Map("abc"->"123","def"->"456","ghi"->"789")
