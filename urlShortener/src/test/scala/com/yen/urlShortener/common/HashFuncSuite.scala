@@ -8,6 +8,6 @@ class HashFuncSuite extends AnyFunSuite{
     val myUrl1 = "google.com"
     val myUrl1Hashed = HashFunc.getHashVal(myUrl1)
 
-    assert (myUrl1Hashed.length == 8) // sth like this "6e4784bc"
+    assert (myUrl1Hashed.length >= 7) // sth like this "6e4784bc"
   }
 }
