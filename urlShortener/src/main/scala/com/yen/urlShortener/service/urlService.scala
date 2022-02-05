@@ -83,7 +83,7 @@ class urlService extends baseService {
   override def deleteCache(key: String): Boolean = {
     try{
       //Redis.deleteValue(key)
-      RedisV2.deleteValue(key)
+      RedisV2.deleteKey(key)
       true
     }catch{
       case e:RuntimeException => {

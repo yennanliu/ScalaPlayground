@@ -12,4 +12,11 @@ object Common {
     }
     res
   }
+
+  // get value from Some
+  def show(x: Option[String]) = x match {
+    case Some(s) => s
+    case None => "??"
+  }
+
 }
