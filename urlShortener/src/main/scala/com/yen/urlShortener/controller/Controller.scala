@@ -31,7 +31,7 @@ object Controller {
   }
 
   // reverse hashcode to url
-  class revereHashcode extends Controller {
+  class reverseHashcode extends Controller {
     get("/api/v1/reverse/:key"){
       requests:Request =>
         val key = requests.params("key")

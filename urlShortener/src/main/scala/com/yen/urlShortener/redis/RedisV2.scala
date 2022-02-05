@@ -49,7 +49,7 @@ object RedisV2{
     }
   }
 
-  def get(key:String):Option[String]={
+  def getKey(key:String):Option[String]={
     r.get(key).orElse(None)
   }
 
