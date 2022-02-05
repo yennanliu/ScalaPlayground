@@ -3,7 +3,7 @@ package com.yen.urlShortener.redis
 // https://github.com/debasishg/scala-redis
 
 import com.redis._
-import  com.yen.urlShortener.common.Common
+import com.yen.urlShortener.common.Common
 
 class RedisV2 {
 }

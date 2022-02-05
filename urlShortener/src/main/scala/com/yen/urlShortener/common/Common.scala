@@ -19,4 +19,9 @@ object Common {
     case None => "??"
   }
 
+  // normalize key
+  def normalizeKey(key:String):String={
+    key.split("://")(1).replace("/","")
+  }
+
 }

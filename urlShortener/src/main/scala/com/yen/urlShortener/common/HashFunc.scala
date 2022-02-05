@@ -11,8 +11,6 @@ object HashFunc {
       .replace("@","")
       .split("B")(1)
 
-    //val value = url.map("0123456789abcdef".indexOf(_)).reduceLeft(_ * 16 + _).toString
-
     value
   }
 }

@@ -2,6 +2,7 @@ package com.yen.urlShortener.service
 
 /** service for app */
 
+import com.yen.urlShortener.common.Common
 import com.yen.urlShortener.common.Common.reverseHashMap
 //import com.yen.urlShortener.redis.Redis
 import com.yen.urlShortener.redis.RedisV2
@@ -23,6 +24,7 @@ trait baseService {
 }
 
 class urlService extends baseService {
+
   val prefix = "https://yen.shorturl/"
   var urlDict= scala.collection.mutable.Map.empty[String,String]
   var useRedis=true
@@ -36,7 +38,7 @@ class urlService extends baseService {
       val hashedURL = HashFunc.getHashVal(url)
 
       // TODO : optimize below
-      val keyNormalized = key.split("://")(1).replace("/","")
+      val keyNormalized = Common.normalizeKey(key)
       println(s"key = $keyNormalized, value = $hashedURL")
 
       this.urlDict += (keyNormalized.toString -> hashedURL)
