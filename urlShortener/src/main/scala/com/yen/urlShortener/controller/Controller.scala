@@ -48,6 +48,13 @@ object Controller {
     }
   }
 
+  class removeAllKey extends Controller {
+    get("/api/v1/removeAll"){
+      requests:Request =>
+        url_service.deleteAllCache()
+    }
+  }
+
   // test 1
   class postHelloWorld extends Controller {
     get("/hi") { request: Request =>

@@ -18,6 +18,7 @@ trait baseService {
   def listUrl():String
   def reverseHash(hashCode:String):Option[String]
   def deleteCache(key:String):Boolean
+  def deleteAllCache():Boolean
 }
 
 class urlService extends baseService {
@@ -96,4 +97,21 @@ class urlService extends baseService {
       }
     }
   }
+
+  override def deleteAllCache(): Boolean = {
+    try{
+      RedisV2.deleteAllKey()
+      true
+    }catch{
+      case e:RuntimeException => {
+        println(s"deleteAllCache failed : $e")
+        false
+      }
+      case _:Throwable => {
+        println(s"deleteAllCache failed")
+        false
+      }
+    }
+  }
+
 }

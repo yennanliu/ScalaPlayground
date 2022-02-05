@@ -44,6 +44,9 @@ curl http://localhost:8888/api/v1/reverse/2a3db3bc
 curl http://localhost:8888/api/v1/remove/<key>
 #curl http://localhost:8888/api/v1/remove/https://www.python.org/
 #curl http://localhost:8888/api/v1/remove/docs.scala-lang.orgjatourtour-of-scala.html
+
+# 5) delete all keys
+curl http://localhost:8888/api/v1/removeAll
 ```
 
 ### Commands
