@@ -8,21 +8,6 @@ import com.yen.urlShortener.common.Common.reverseHashMap
 import com.yen.urlShortener.redis.RedisV2
 import com.yen.urlShortener.common.HashFunc
 
-trait baseService {
-  // attr
-  val prefix:String
-  var urlDict:scala.collection.mutable.Map[String, String]
-  var useRedis:Boolean
-
-  // method
-  def hashUrl(url:String):Option[String]
-  def listUrl():String
-  def listValue():String
-  def reverseHash(hashCode:String):Option[String]
-  def deleteCache(key:String):Boolean
-  def deleteAllCache():Boolean
-}
-
 class urlService extends baseService {
 
   val prefix = "https://yen.shorturl/"
