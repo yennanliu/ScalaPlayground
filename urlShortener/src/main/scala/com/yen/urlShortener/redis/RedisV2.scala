@@ -55,19 +55,16 @@ object RedisV2{
   /** method delete all keys from redis */
   def deleteAllKey():Unit={
     // TODO : optimize below code
-    val key_list = r.keys().toArray
-    key_list(0).map{
-      x => {
-        val key = Common.show(x)
-        //println(key)
-        try{
-          val res = r.del(key)
-          println(s"delete key : $key OK")
-        }catch {
-          case e:Exception => {
-            println(s"deleteValue failed : $key " + e.printStackTrace())
-            false
-          }
+    //val key_list = r.keys().toArray
+    val keys = getAllKeys()
+    keys.map{
+      key => try{
+        r.del(key)
+        println(s"delete key : $key OK")
+      }catch {
+        case e:Exception => {
+          println(s"deleteValue failed : $key " + e.printStackTrace())
+          false
         }
       }
     }
@@ -76,6 +73,18 @@ object RedisV2{
   /** method get key from redis */
   def getKey(key:String):Option[String]={
     r.get(key).orElse(None)
+  }
+
+  /** method get all keys from redis */
+  def getAllKeys():List[String]={
+    val key_list = r.keys().toArray
+    val keys = key_list(0).map{
+      x => {
+        val key = Common.show(x)
+        key
+      }
+    }
+    keys
   }
 
 }

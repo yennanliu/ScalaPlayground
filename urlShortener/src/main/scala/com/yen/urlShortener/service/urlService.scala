@@ -59,8 +59,8 @@ class urlService extends baseService {
   override def listUrl(): String = {
     if (useRedis){
       // TODO : fix to read from Redis
-      this.urlDict.keys.foreach(println(_))
-      this.urlDict.keys.toString()
+      val keys = RedisV2.getAllKeys()
+      keys.toString()
     }else{
       this.urlDict.keys.foreach(println(_))
       this.urlDict.keys.toString()
