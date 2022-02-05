@@ -14,6 +14,7 @@ class urlApp extends HttpServer {
   override protected def configureHttp(router: HttpRouter): Unit = {
     router.add[Controller.shortenUrl]
     router.add[Controller.listAllUrl]
+    router.add[Controller.listAllHashedUrl]
     router.add[Controller.reverseHashcode]
     router.add[Controller.removeKey]
     router.add[Controller.removeAllKey]

@@ -21,12 +21,21 @@ object Controller {
     }
   }
 
-  // list hash url
+  // list url
   class listAllUrl extends Controller {
     get("/api/v1/all_url"){
       requests:Request =>
       val r = url_service.listUrl()
       r
+    }
+  }
+
+  // list hashed url
+  class listAllHashedUrl extends Controller {
+    get("/api/v1/all_hashed"){
+      requests:Request =>
+        val r = url_service.listValue()
+        r
     }
   }
 

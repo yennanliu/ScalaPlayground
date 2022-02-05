@@ -16,6 +16,7 @@ trait baseService {
   // method
   def hashUrl(url:String):Option[String]
   def listUrl():String
+  def listValue():String
   def reverseHash(hashCode:String):Option[String]
   def deleteCache(key:String):Boolean
   def deleteAllCache():Boolean
@@ -58,12 +59,21 @@ class urlService extends baseService {
 
   override def listUrl(): String = {
     if (useRedis){
-      // TODO : fix to read from Redis
       val keys = RedisV2.getAllKeys()
       keys.toString()
     }else{
       this.urlDict.keys.foreach(println(_))
       this.urlDict.keys.toString()
+    }
+  }
+
+  override def listValue(): String =  {
+    if (useRedis){
+      val values = RedisV2.getAllValues()
+      values.toString()
+    }else{
+      this.urlDict.values.foreach(println(_))
+      this.urlDict.values.toString()
     }
   }
 
@@ -80,10 +90,8 @@ class urlService extends baseService {
     }
   }
 
-  // TODO : fix this
   override def deleteCache(key: String): Boolean = {
     try{
-      //Redis.deleteValue(key)
       RedisV2.deleteKey(key)
       true
     }catch{

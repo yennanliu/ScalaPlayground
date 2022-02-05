@@ -87,4 +87,15 @@ object RedisV2{
     keys
   }
 
+  /** method get all values from redis */
+  def getAllValues():List[String]={
+    val keys = getAllKeys()
+    val values = keys.map{
+      key => {
+        val value = Common.show(getKey(key))
+        value
+      }
+    }
+    values
+  }
 }

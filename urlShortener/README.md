@@ -32,6 +32,9 @@ curl -X POST -H "Content-Type: application/json" \
 # 2) list url
 curl http://localhost:8888/api/v1/all_url
 
+# 2') list hashed url
+curl http://localhost:8888/api/v1/all_hashed
+
 # 3) reverse hashcode
 # get hashcode from step 1)
 # curl -X POST -H "Content-Type: application/json" \
