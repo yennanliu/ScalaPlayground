@@ -5,12 +5,19 @@ package com.yen.urlShortener.redis
 import com.redis._
 import com.yen.urlShortener.common.Common
 
-class RedisV2 {
+class RedisV2(host:String, port:Int) {
 }
 
 object RedisV2{
 
-  val r = new RedisClient("localhost", 6379)
+  // constructor
+//  def apply(host:String, port:Int)={
+//    val r = new RedisClient("localhost", 6379)
+//    new RedisV2("localhost", 6379)
+//  }
+
+  var r = new RedisClient("localhost", 6379)
+  //var r = null
 
   /** method put key, value into redis */
   def putValue(key:String, value:String):Boolean={
