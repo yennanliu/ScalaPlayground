@@ -72,7 +72,7 @@ object Controller {
       response.temporaryRedirect.location("/hi")
     }
   }
-  
+
   // test 1
   class postHelloWorld extends Controller {
     get("/hi") { request: Request =>
