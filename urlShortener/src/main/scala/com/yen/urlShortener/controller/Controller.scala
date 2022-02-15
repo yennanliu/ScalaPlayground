@@ -64,6 +64,18 @@ object Controller {
     }
   }
 
+  // redirect
+  // https://github.com/capotej/finatra-example/blob/master/src/main/scala/com/twitter/finatra_example/App.scala#L69
+  class redirect1 extends Controller {
+    get("/api/v1/redirect"){
+      println("redirect !!!!")
+      requests:Request =>
+        response
+          .temporaryRedirect
+          .location("/foo/123")
+    }
+  }
+
   // test 1
   class postHelloWorld extends Controller {
     get("/hi") { request: Request =>

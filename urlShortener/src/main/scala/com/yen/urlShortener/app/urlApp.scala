@@ -18,6 +18,7 @@ class urlApp extends HttpServer {
     router.add[Controller.reverseHashcode]
     router.add[Controller.removeKey]
     router.add[Controller.removeAllKey]
+    router.add[Controller.redirect1]
     router.add[Controller.postHelloWorld]
   }
 }
