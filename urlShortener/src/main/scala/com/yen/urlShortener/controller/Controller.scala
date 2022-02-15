@@ -7,6 +7,7 @@ import com.twitter.finagle.http.Request
 
 import com.yen.urlShortener.model.{hashCodeRequest, redisKeyRequest, urlRequest}
 import com.yen.urlShortener.service.urlService
+import com.yen.urlShortener.common.Common
 
 object Controller {
 
@@ -68,11 +69,31 @@ object Controller {
   // https://gitter.im/twitter/finatra?at=598b74d5329651f46e05d13e
   class redirect1 extends Controller {
     println("redirect !!!!")
+    get("/api/v1/redirect/:key") { requests: Request =>
+      val key = requests.params("key")
+      val r = url_service.reverseHash(key) match {
+        // TODO : fix below
+        case r => {
+          println("redirect now")
+          println(">>> r = " + r)
+          val reversed_url = Common.show(r)
+          println(">>> reversed_url = " + reversed_url)
+          response.temporaryRedirect.location("www.python.org")
+        }
+        case _ => {
+          println("hashcode not exists")
+          response.temporaryRedirect.location("/hi")
+        }
+      }
+    }
+  }
+
+  class redirect2 extends Controller {
+    println("redirect !!!!")
     get("/api/v1/redirect") { request: Request =>
       response.temporaryRedirect.location("/hi")
     }
   }
-
   // test 1
   class postHelloWorld extends Controller {
     get("/hi") { request: Request =>

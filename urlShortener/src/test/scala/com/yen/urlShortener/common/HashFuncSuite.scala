@@ -12,7 +12,7 @@ class HashFuncSuite extends AnyFunSuite{
 
     val myUrl2 = "https://github.com/apache/spark"
     val myUrl2Hashed = HashFunc.getHashVal(myUrl2)
-    
+
     assert (myUrl2Hashed.length >= 7)
   }
 }
