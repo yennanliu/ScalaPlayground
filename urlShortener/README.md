@@ -86,6 +86,33 @@ redis-cli ping
 127.0.0.1:6379> keys *
 ```
 
+```bash
+# generate api report
+# via sbt
+# https://docs.scala-lang.org/overviews/scaladoc/generate.html
+
+(base) yen@macbookpro urlShortener % sbt
+[info] Loading global plugins from /Users/yen/.sbt/1.0/plugins
+[info] Loading settings for project urlshortener-build from assembly.sbt ...
+[info] Loading project definition from /Users/yen/scalaPlayGround/urlShortener/project
+[info] Loading settings for project urlshortener from build.sbt ...
+[info] Set current project to urlShortener (in build file:/Users/yen/scalaPlayGround/urlShortener/)
+[info] sbt server started at local:///Users/yen/.sbt/1.0/server/ec4252217fb3edafa1c3/sock
+sbt:urlShortener> doc
+[info] Main Scala API documentation to /Users/yen/scalaPlayGround/urlShortener/target/scala-2.11/api...
+[warn] /Users/yen/scalaPlayGround/urlShortener/src/main/scala/com/yen/urlShortener/controller/Controller.scala:5:33: imported `Controller' is permanently hidden by definition of object Controller in package controller
+[warn] import com.twitter.finatra.http.Controller
+[warn]                                 ^
+[warn] there were 5 feature warnings; re-run with -feature for details
+model contains 52 documentable templates
+[warn] two warnings found
+[info] Main Scala API documentation successful.
+[success] Total time: 6 s, completed Feb 17, 2022 12:29:14 PM
+sbt:urlShortener>
+
+# api doc: /scalaPlayGround/urlShortener/target/scala-2.11/api
+```
+
 ### Ref
 - App
     - https://github.com/bugthesystem/reducio
