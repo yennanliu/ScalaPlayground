@@ -90,6 +90,7 @@ redis-cli ping
 # generate api report
 # via sbt
 # https://docs.scala-lang.org/overviews/scaladoc/generate.html
+# https://docs.scala-lang.org/style/scaladoc.html
 
 (base) yen@macbookpro urlShortener % sbt
 [info] Loading global plugins from /Users/yen/.sbt/1.0/plugins
