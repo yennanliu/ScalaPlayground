@@ -19,6 +19,10 @@ sbt run
 # visit http://localhost:9000/
 ```
 
+### Endpoints
+- http://localhost:9000
+- http://localhost:9000/api/todos
+
 ### Ref
 - Scala TODO
 	- https://ixorasolution.com/blog/how-to-build-rest-api-with-scala-play-framework-1
