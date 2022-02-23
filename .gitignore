@@ -51,4 +51,8 @@ playRESTApi1/target
 
 playTODO/project
 
+heroAPI/.idea/
+heroAPI/project/
+heroAPI/target/
+
 dump.rdb

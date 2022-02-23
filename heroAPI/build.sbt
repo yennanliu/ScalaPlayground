@@ -1,28 +1,17 @@
-name := "HeroAPI"
+name := "heroAPI"
 
-import Dependencies._
+organization := "yen.com"
 
-ThisBuild / scalaVersion     := "2.13.4"
-ThisBuild / version          := "0.1.0-SNAPSHOT"
-ThisBuild / organization     := "com.yen"
-ThisBuild / organizationName := "yen"
+version := "1.0"
+
+scalaVersion := "2.12.6"
 
 lazy val versions = new {
-  val twitterSererVersion = "22.1.0"
+  val typesafe = "1.4.0"
 }
 
-resolvers += Resolver.sonatypeRepo("snapshots")
-
-lazy val root = (project in file("."))
-  .settings(
-    name := "app",
-    libraryDependencies += scalaTest % Test
-  )
-
-resolvers += Resolver.sonatypeRepo("snapshots")
-
 libraryDependencies ++= Seq(
-  "com.twitter" %% "twitter-server" % versions.twitterSererVersion
+  "com.twitter" %% "twitter-server" % "22.1.0"
 )
 
 conflictManager := ConflictManager.latestRevision
