@@ -17,12 +17,8 @@ jobs:
         java-version: 1.8
     - name: Run tests
       run: sbt test 
-    - name: Run sbt docker Finatra-docker-example
-      run: cd Finatra-docker-example && sbt docker:publishLocal
-    - name: Run sbt docker BasicExample
-      run: cd BasicExample && sbt docker:publishLocal
-    - name: Run sbt docker akkahttp-docker-example
-      run: cd akkahttp-docker-example && sbt docker:publishLocal
+    - name: Run sbt CRMApI
+      run: cd CRMApI && sbt docker:publishLocal
     - name: Check results
       run: docker ps -a  && docker images
     - name: Build playTODO
