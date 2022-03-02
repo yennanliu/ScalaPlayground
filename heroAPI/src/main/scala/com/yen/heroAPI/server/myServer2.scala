@@ -3,10 +3,11 @@ package com.yen.heroAPI.server
 import com.twitter.finagle.{Http, Service}
 import com.twitter.finagle.http.{HttpMuxer, Request, Response, Route, RouteIndex, Status}
 import com.twitter.server.TwitterServer
-import com.twitter.server.handler.AbortHandler
+import com.twitter.server.handler.{AbortHandler, ReplyHandler}
 import com.twitter.util.{Await, Future}
-
 import com.twitter.finagle.http.Method.Post
+
+import com.yen.heroAPI.service.heroService
 
 object myServer2 extends TwitterServer {
 
@@ -19,6 +20,7 @@ object myServer2 extends TwitterServer {
     }
   }
 
+  // https://github.com/twitter/twitter-server/blob/develop/server/src/main/scala/com/twitter/server/Lifecycle.scala
   val service2 = new Service[Request, Response] {
     def apply(request: Request) = {
       // add this to end point (so http://localhost:8888/test)
@@ -29,10 +31,18 @@ object myServer2 extends TwitterServer {
         )
       )
 
+//      HttpMuxer.addHandler(
+//        Route(
+//          pattern = "/test2/",
+//          heroService.apply()
+//        )
+//      )
+
       HttpMuxer.addHandler(
         Route(
-          pattern = "/test2/",
-          service
+          pattern = "/health_test",
+          handler = new ReplyHandler("OK\n"),
+          index = Some(RouteIndex(alias = "Health", group = group))
         )
       )
 
