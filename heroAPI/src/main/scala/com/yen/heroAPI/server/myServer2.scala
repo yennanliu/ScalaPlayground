@@ -5,9 +5,8 @@ import com.twitter.finagle.http.{HttpMuxer, Request, Response, Route, RouteIndex
 import com.twitter.server.TwitterServer
 import com.twitter.server.handler.{AbortHandler, ReplyHandler}
 import com.twitter.util.{Await, Future}
-import com.twitter.finagle.http.Method.Post
 
-import com.yen.heroAPI.service.heroService
+import com.yen.heroAPI.service.{heroService, myService}
 
 object myServer2 extends TwitterServer {
 
@@ -42,6 +41,14 @@ object myServer2 extends TwitterServer {
         Route(
           pattern = "/health_test",
           handler = new ReplyHandler("OK\n"),
+          index = Some(RouteIndex(alias = "Health", group = group))
+        )
+      )
+
+      HttpMuxer.addHandler(
+        Route(
+          pattern = "/myservice",
+          handler = new myService(statsReceiver.counter("requests_counter"), logger),
           index = Some(RouteIndex(alias = "Health", group = group))
         )
       )

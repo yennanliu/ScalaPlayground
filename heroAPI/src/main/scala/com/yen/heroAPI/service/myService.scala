@@ -13,6 +13,7 @@ class myService(requestCounter: Counter, logger: Logger)
     logger.info("Received a request at " + Time.now)
     requestCounter.incr()
     val response = Response(request.version, Status.Ok)
+    println(">>>> myService")
     response.contentString = s"Hello at ${Time.now.format("yyyy-MM-DD hh:mm:ss.sss")}"
     Future.value(response)
   }
