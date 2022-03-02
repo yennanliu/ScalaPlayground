@@ -18,11 +18,12 @@ object BasicServer extends TwitterServer {
   }
 
   def main(): Unit = {
+    val counter = statsReceiver.counter("requests_counter")
     val server = Http.serve(":8888", service)
+    counter.incr()
     onExit {
       server.close()
     }
     Await.ready(server)
   }
-
 }
