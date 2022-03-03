@@ -11,5 +11,6 @@ object App extends heroApp
 class heroApp extends HttpServer{
   override protected def configureHttp(router: HttpRouter): Unit = {
     router.add[Controller.hello]
+    router.add[Controller.getAllHero]
   }
 }

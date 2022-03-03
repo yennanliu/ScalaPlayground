@@ -48,11 +48,14 @@ playRESTApi1/project
 playRESTApi1/docs/target
 playRESTApi1/gatling
 playRESTApi1/target
-
+# playTODO
 playTODO/project
-
+# heroAPI
 heroAPI/.idea/
 heroAPI/project/
 heroAPI/target/
-
+# heroAPI2
+heroAPI2/target
+heroAPI2/target/*
+heroAPI2/project/target
 dump.rdb
