@@ -59,4 +59,5 @@ heroAPI2/target
 heroAPI2/target/*
 heroAPI2/project/target
 heroAPI2/.idea/
+heroAPI2/project/
 dump.rdb
