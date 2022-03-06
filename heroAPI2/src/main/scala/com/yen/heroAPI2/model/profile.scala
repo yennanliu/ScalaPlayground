@@ -5,4 +5,10 @@ case class profile(
                   int:Int,
                   agi:Int,
                   luk:Int
-                  )
+                  ) {
+  def apply(str:Int,
+            int:Int,
+            agi:Int,
+            luk:Int): profile = ???
+
+}

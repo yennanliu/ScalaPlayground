@@ -11,8 +11,16 @@ class heroService extends baseService{
   // TODO : fix below hardcode data
   val hero1 = new hero(1,"Daredevil","http://i.annihil.us/u/prod/marvel/i/mg/6/90/537ba6d49472b/standard_xlarge.jpg",profile(0,0,0,0))
   val hero2 = new hero(2,"Thor","http://x.annihil.us/u/prod/marvel/i/mg/5/a0/537bc7036ab02/standard_xlarge.jpg",profile(1,2,3,4))
+  val heroes = new ListBuffer[hero]()
+  heroes += hero1
+  heroes += hero2
+  heroes
 
-  override def add(id: Int, name: String): Boolean = ???
+  override def add(id: Int, name: String, profile:profile): Boolean = {
+    try{
+      heroes += new hero(id, name, profile)
+    }
+  }
 
   override def read(id: Int): hero = ???
 
@@ -21,9 +29,6 @@ class heroService extends baseService{
   override def delete(id: Int): Boolean = ???
 
   override def readAll(): ListBuffer[hero] = {
-    val heroes = new ListBuffer[hero]()
-    heroes += (hero1)
-    heroes += hero2
     heroes
   }
 }
