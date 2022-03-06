@@ -6,5 +6,5 @@ case class hero(
                id:Int,
                name:String,
                imageUrl:String,
-               profile:HashMap[String,Int]
+               profile:profile
              )
