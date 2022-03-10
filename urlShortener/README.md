@@ -2,8 +2,12 @@
 - A url shorten app via scala
 - Fratures
     - long url -> short url
-    - short url -> long url
+    - short url -> long url (re-direction : `http 301 or 302`)
     - show all shorten url
+- TODO:
+    - fix process : long url -> unique ID -> short url
+    - save `(id, long-url, short-url)` to DB
+    - 301/302 redirection
 
 ### Endpoints
 - finatra health page : http://localhost:9990
