@@ -23,7 +23,12 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.1.1" % "test",
 
   // sangria
-  "org.sangria-graphql" %% "sangria" % versions.sangria
+  "org.sangria-graphql" %% "sangria" % versions.sangria,
+  "org.sangria-graphql" %% "sangria-spray-json" % "1.0.2",
+
+  // Akka
+  "com.typesafe.akka" %% "akka-actor" % "2.5.28",
+  "com.typesafe.akka" %% "akka-remote" % "2.5.28"
 )
 
 conflictManager := ConflictManager.latestRevision
