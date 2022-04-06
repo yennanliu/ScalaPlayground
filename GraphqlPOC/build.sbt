@@ -25,6 +25,7 @@ libraryDependencies ++= Seq(
   // sangria
   "org.sangria-graphql" %% "sangria" % versions.sangria,
   "org.sangria-graphql" %% "sangria-spray-json" % "1.0.2",
+  "org.sangria-graphql" %% "sangria-circe" % "1.3.2",
 
   // Akka
   "com.typesafe.akka" %% "akka-actor" % "2.5.28",
