@@ -61,3 +61,7 @@ heroAPI2/project/target
 heroAPI2/.idea/
 heroAPI2/project/
 dump.rdb
+
+.idea/workspace.xml
+.idea
+project/target/config-classes
