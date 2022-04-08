@@ -1,15 +1,7 @@
-package com.yen.test
+package com.yen.calibanTest
 
-import caliban.client.IntrospectionClient.Query
-import caliban.client.Operations.RootQuery
 import caliban.client.SelectionBuilder
 import com.sun.management.VMOption.Origin
-
-
-//import sttp.client._
-//import sttp.client.asynch asynchttpclient.zio.AsyncHttpClientZioBackend
-
-// https://ghostdogpr.github.io/caliban/docs/client.html#dependencies
 
 object Test6 extends App {
 

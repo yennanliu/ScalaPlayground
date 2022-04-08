@@ -1,11 +1,11 @@
-package com.yen.test
+package com.yen.calibanTest
 
 import caliban.client.CalibanClientError.DecodingError
 import caliban.client.FieldBuilder._
-import caliban.client.Operations._
-import caliban.client.SelectionBuilder._
-import caliban.client.__Value._
-import caliban.client.{ ArgEncoder, Argument, ScalarDecoder, SelectionBuilder }
+import caliban.client.Operations.{RootMutation, RootQuery}
+import caliban.client.SelectionBuilder.Field
+import caliban.client.__Value.{__EnumValue, __StringValue}
+import caliban.client.{ArgEncoder, Argument, ScalarDecoder, SelectionBuilder}
 
 object Client {
 
