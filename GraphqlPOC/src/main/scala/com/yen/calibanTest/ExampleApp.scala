@@ -54,7 +54,8 @@ object ExampleApp extends App {
     def sendRequest[T](req: Request[Either[CalibanClientError, T], Any]): RIO[Console with SttpClient, T] =
       send(req).map(_.body).absolve.tap(res => putStrLn(s"Result: $res"))
 
-    val uri   = uri"http://localhost:8088/api/graphql"
+    //val uri   = uri"http://localhost:8088/api/graphql"
+    val uri   = uri"http://localhost:8080"
     val call1 = sendRequest(mutation.toRequest(uri))
     val call2 = sendRequest(query.toRequest(uri, useVariables = true))
 
