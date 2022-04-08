@@ -13,3 +13,5 @@
 	- https://www.howtographql.com/graphql-scala/2-preparing-first-query/
 - Tutorial
 	- https://medium.com/@ghostdogpr/graphql-in-scala-with-caliban-part-1-8ceb6099c3c2
+		- code
+			- https://github.com/ghostdogpr/caliban-blog-series
