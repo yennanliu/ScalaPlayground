@@ -29,7 +29,13 @@ libraryDependencies ++= Seq(
 
   // Akka
   "com.typesafe.akka" %% "akka-actor" % "2.5.28",
-  "com.typesafe.akka" %% "akka-remote" % "2.5.28"
+  "com.typesafe.akka" %% "akka-remote" % "2.5.28",
+
+  // caliban
+  "com.github.ghostdogpr" %% "caliban-client" % "1.4.0",
+  //"com.github.ghostdogpr" % "caliban-codegen-sbt" % "1.4.0"
+  //"com.github.ghostdogpr" % "caliban-codegen-sbt" % "1.4.0"
+
 )
 
 conflictManager := ConflictManager.latestRevision
