@@ -12,6 +12,8 @@ lazy val versions = new {
   val sangria = "2.0.0"
 }
 
+val calibanVersion = "1.4.0"
+
 libraryDependencies ++= Seq(
   // config
   "com.typesafe" % "config" % "1.2.1",
@@ -34,8 +36,9 @@ libraryDependencies ++= Seq(
   // caliban
   "com.github.ghostdogpr" %% "caliban-client" % "1.4.0",
   //"com.github.ghostdogpr" % "caliban-codegen-sbt" % "1.4.0"
-  //"com.github.ghostdogpr" % "caliban-codegen-sbt" % "1.4.0"
-
+  //"com.github.ghostdogpr" % "caliban-codegen-sbt" % "1.4.0",
+  "com.github.ghostdogpr" %% "caliban-zio-http" % "1.4.0",
+  "com.softwaremill.sttp.client3" %% "async-http-client-backend-zio" % "3.3.18",
 )
 
 conflictManager := ConflictManager.latestRevision

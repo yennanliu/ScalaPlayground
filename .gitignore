@@ -68,3 +68,4 @@ project/target/config-classes
 GraphqlPOC/target/streams/
 GraphqlPOC/target/scala-2.12
 GraphqlPOC/target/.history
+GraphqlPOC/project/target

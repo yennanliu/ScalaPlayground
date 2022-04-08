@@ -6,9 +6,9 @@ import com.sun.management.VMOption.Origin
 object Test6 extends App {
 
   object Character {
-    def name: SelectionBuilder[Character, String]            = ???
-    def nicknames: SelectionBuilder[Character, List[String]] = ???
-    def origin: SelectionBuilder[Character, Origin]          = ???
+    def name: SelectionBuilder[Character, String]            = null
+    def nicknames: SelectionBuilder[Character, List[String]] = null
+    def origin: SelectionBuilder[Character, Origin]          = null
   }
 
   val selection: SelectionBuilder[Character, (String, List[String])] =
