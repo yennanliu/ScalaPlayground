@@ -36,6 +36,8 @@ http://localhost:8080/graphql
 	- https://www.contentful.com/developers/docs/references/graphql/
 - client example
 	- https://www.howtographql.com/graphql-scala/2-preparing-first-query/
+- sangria is graphsql server framework
+	- https://gitter.im/sangria-graphql/sangria?at=57f827930aa72e3c5be35ace
 - Tutorial
 	- t1
 		- https://medium.com/@ghostdogpr/graphql-in-scala-with-caliban-part-1-8ceb6099c3c2

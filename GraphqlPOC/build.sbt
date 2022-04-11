@@ -39,6 +39,12 @@ libraryDependencies ++= Seq(
   //"com.github.ghostdogpr" % "caliban-codegen-sbt" % "1.4.0",
   "com.github.ghostdogpr" %% "caliban-zio-http" % "1.4.0",
   "com.softwaremill.sttp.client3" %% "async-http-client-backend-zio" % "3.3.18",
+
+  // graphql-java
+  "com.graphql-java" % "graphql-java" % "15.0",
+
+  // scala request
+  "com.lihaoyi" %% "requests" % "0.1.8"
 )
 
 conflictManager := ConflictManager.latestRevision

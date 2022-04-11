@@ -18,6 +18,7 @@ object Test2 extends App {
   val schema = Schema(QueryType)
 
   val query = graphql"{ hello }"
+  //val query = graphql"{ hello { hello } }"
 
   val result = Executor.execute(schema, query)
 
