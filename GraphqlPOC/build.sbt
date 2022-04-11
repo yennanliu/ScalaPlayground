@@ -4,7 +4,7 @@ organization := "com.yen"
 
 version := "1.0"
 
-scalaVersion := "2.12.0"
+scalaVersion := "2.12.13"
 
 lazy val versions = new {
   val typesafe = "1.4.0"
@@ -29,14 +29,8 @@ libraryDependencies ++= Seq(
   "org.sangria-graphql" %% "sangria-spray-json" % "1.0.2",
   "org.sangria-graphql" %% "sangria-circe" % "1.3.2",
 
-  // Akka
-  "com.typesafe.akka" %% "akka-actor" % "2.5.28",
-  "com.typesafe.akka" %% "akka-remote" % "2.5.28",
-
   // caliban
   "com.github.ghostdogpr" %% "caliban-client" % "1.4.0",
-  //"com.github.ghostdogpr" % "caliban-codegen-sbt" % "1.4.0"
-  //"com.github.ghostdogpr" % "caliban-codegen-sbt" % "1.4.0",
   "com.github.ghostdogpr" %% "caliban-zio-http" % "1.4.0",
   "com.softwaremill.sttp.client3" %% "async-http-client-backend-zio" % "3.3.18",
 
@@ -44,7 +38,10 @@ libraryDependencies ++= Seq(
   "com.graphql-java" % "graphql-java" % "15.0",
 
   // scala request
-  "com.lihaoyi" %% "requests" % "0.1.8"
+  "com.lihaoyi" %% "requests" % "0.1.8",
+
+  // sttp
+  "com.softwaremill.sttp.client3" %% "async-http-client-backend-zio" % "3.3.15"
 )
 
 conflictManager := ConflictManager.latestRevision

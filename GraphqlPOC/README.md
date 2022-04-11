@@ -23,6 +23,14 @@ curl \
 http://localhost:8080/graphql
 ```
 
+## Concept
+We need up to 3 case classes:
+- one for for Queries: it will contain our read-only endpoints, those we express using GET requests in REST
+- one for Mutations: it will contain endpoints for modifying data, those we express using POST, PUT and DELETE requests in REST
+- one for Subscriptions: this is not supported by REST, it allows your backend to push events to the client, typically using a WebSocket
+- Ref
+	- https://medium.com/@ghostdogpr/graphql-in-scala-with-caliban-part-1-8ceb6099c3c2
+
 ## Ref
 - General
 	- EN

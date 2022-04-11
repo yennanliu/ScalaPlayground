@@ -28,15 +28,15 @@ object Test1 extends App {
   println("=======================")
 
   // example 3
-  val url3 = "http://localhost:8080/graphql"
-  val data3 = "{ \"query\" : \" { allPeople { id fullName { friends { id } } } } \" }"
-  val r3 = requests.post(
-    url3,
-    data = data3,
-    headers = Map(
-      "Content-Type" -> "application/json"
-    )
-  )
-  println(r3.statusCode)
-  println(r3.text)
+//  val url3 = "http://localhost:8080/graphql"
+//  val data3 = "{ \"query\" : \" { allPeople { id fullName { friends { id } } } } \" }"
+//  val r3 = requests.post(
+//    url3,
+//    data = data3,
+//    headers = Map(
+//      "Content-Type" -> "application/json"
+//    )
+//  )
+//  println(r3.statusCode)
+//  println(r3.text)
 }
