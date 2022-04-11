@@ -1,5 +1,28 @@
 # Graphql POC
 
+## Quick start
+```bash
+# run the graphql server
+cd zero-to-graphql/zero-scala
+sbt run
+
+# make a graphql client request via CLI
+
+# example 1
+curl \
+-X POST \
+-H "Content-Type: application/json" \
+--data '{ "query": "{ allPeople { id } } " }' \
+http://localhost:8080/graphql
+
+# example 2
+curl \
+-X POST \
+-H "Content-Type: application/json" \
+--data '{ "query": "{ allPeople { id fullName } } " }' \
+http://localhost:8080/graphql
+```
+
 ## Ref
 - General
 	- EN
