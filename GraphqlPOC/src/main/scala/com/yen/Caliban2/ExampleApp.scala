@@ -1,15 +1,15 @@
-package com.yen.Caliban
+package com.yen.Caliban2
 
 // https://github.com/ghostdogpr/caliban/blob/master/examples/src/main/scala/example/client/ExampleApp.scala
 
+import com.yen.Caliban2.Client._
+
 import caliban.client.CalibanClientError
-//import com.yen.calibanTest.Client.{Captain, Engineer, Mechanic, Origin, Pilot}
-import com.yen.Caliban.Client._
-import zio.URIO
+
 import sttp.client3._
 import sttp.client3.asynchttpclient.zio._
-import zio.console.{Console, putStrLn}
-import zio.{App, ExitCode, RIO, ZIO}
+import zio.console.{ putStrLn, Console }
+import zio.{ App, ExitCode, RIO, ZIO }
 
 object ExampleApp extends App {
 
@@ -25,7 +25,7 @@ object ExampleApp extends App {
 
   override def run(args: List[String]): ZIO[zio.ZEnv, Nothing, ExitCode] = {
     val character = {
-      import com.yen.Caliban.Client.Character._
+      import com.yen.Caliban2.Client.Character._
       (name ~
         nicknames ~
         origin ~
@@ -54,8 +54,7 @@ object ExampleApp extends App {
     def sendRequest[T](req: Request[Either[CalibanClientError, T], Any]): RIO[Console with SttpClient, T] =
       send(req).map(_.body).absolve.tap(res => putStrLn(s"Result: $res"))
 
-    //val uri   = uri"http://localhost:8088/api/graphql"
-    val uri   = uri"http://localhost:8080"
+    val uri   = uri"http://localhost:8088/api/graphql"
     val call1 = sendRequest(mutation.toRequest(uri))
     val call2 = sendRequest(query.toRequest(uri, useVariables = true))
 
