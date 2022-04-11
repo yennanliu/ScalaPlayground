@@ -1,6 +1,8 @@
-package com.yen.calibanTest
+package com.yen.Caliban
 
-import com.yen.calibanTest.TrainClient._
+// https://github.com/ghostdogpr/caliban-blog-series/blob/master/src/main/scala/client/TrainApp.scala
+
+import com.yen.Caliban.TrainClient._
 
 import sttp.client3._
 import sttp.client3.asynchttpclient.zio.{ send, AsyncHttpClientZioBackend }

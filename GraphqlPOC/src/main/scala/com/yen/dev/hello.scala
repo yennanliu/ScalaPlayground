@@ -1,4 +1,4 @@
-package com.yen.test
+package com.yen.dev
 
 object hello extends App {
   println("hello !!!!")

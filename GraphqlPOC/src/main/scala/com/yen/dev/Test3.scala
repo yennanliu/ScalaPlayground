@@ -1,4 +1,4 @@
-package com.yen.test
+package com.yen.dev
 
 // https://sangria-graphql.github.io/learn/
 

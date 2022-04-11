@@ -1,4 +1,4 @@
-package com.yen.calibanTest
+package com.yen.Caliban
 
 import caliban.client.SelectionBuilder
 import com.sun.management.VMOption.Origin

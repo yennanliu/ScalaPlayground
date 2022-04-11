@@ -1,4 +1,4 @@
-package com.yen.calibanTest
+package com.yen.Caliban
 
 import caliban.client.CalibanClientError.DecodingError
 import caliban.client.FieldBuilder._

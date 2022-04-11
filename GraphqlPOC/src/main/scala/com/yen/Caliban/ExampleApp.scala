@@ -1,10 +1,10 @@
-package com.yen.calibanTest
+package com.yen.Caliban
 
 // https://github.com/ghostdogpr/caliban/blob/master/examples/src/main/scala/example/client/ExampleApp.scala
 
 import caliban.client.CalibanClientError
 //import com.yen.calibanTest.Client.{Captain, Engineer, Mechanic, Origin, Pilot}
-import com.yen.calibanTest.Client._
+import com.yen.Caliban.Client._
 import zio.URIO
 import sttp.client3._
 import sttp.client3.asynchttpclient.zio._
@@ -25,7 +25,7 @@ object ExampleApp extends App {
 
   override def run(args: List[String]): ZIO[zio.ZEnv, Nothing, ExitCode] = {
     val character = {
-      import com.yen.calibanTest.Client.Character._
+      import com.yen.Caliban.Client.Character._
       (name ~
         nicknames ~
         origin ~
