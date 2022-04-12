@@ -6,6 +6,9 @@
 cd zero-to-graphql/zero-scala
 sbt run
 
+# schema:
+# https://github.com/steveluscher/zero-to-graphql/blob/master/zero-scala/src/main/scala/Repository.scala#L62
+
 # make a graphql client request via CLI
 
 # example 1
@@ -19,8 +22,15 @@ http://localhost:8080/graphql
 curl \
 -X POST \
 -H "Content-Type: application/json" \
---data '{ "query": "{ allPeople { id fullName } } " }' \
+--data '{ "query": "{ allPeople { fullName id } } " }' \
 http://localhost:8080/graphql
+
+# example 3
+# curl \
+# -X POST \
+# -H "Content-Type: application/json" \
+# --data '{ "query": "{  person (id:1001){ id fullName } " }' \
+# http://localhost:8080/graphql
 ```
 
 ## Concept

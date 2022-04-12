@@ -44,8 +44,8 @@ object PeopleClient {
       _root_.caliban.client.SelectionBuilder.Field("lastName", Scalar())
     def id: SelectionBuilder[allPeople, String] =
       _root_.caliban.client.SelectionBuilder.Field("id", Scalar())
-    def friends: SelectionBuilder[allPeople, List[String]] =
-      _root_.caliban.client.SelectionBuilder.Field("friends", ListOf(Scalar()))
+//    def friends: SelectionBuilder[allPeople, List[String]] =
+//      _root_.caliban.client.SelectionBuilder.Field("friends", ListOf(Scalar()))
   }
 
   type PeopleLocation
@@ -56,14 +56,17 @@ object PeopleClient {
 
   type Searchable
   object Searchable {
+
     def allPeople[A](
                       innerSelection: SelectionBuilder[PeopleAttr, A]
                     ): SelectionBuilder[Searchable, List[A]] =
-      _root_.caliban.client.SelectionBuilder.Field("friends", ListOf(Obj(innerSelection)))
+      _root_.caliban.client.SelectionBuilder.Field("allPeople", ListOf(Obj(innerSelection)))
+
     def operationLocations[A](
                                innerSelection: SelectionBuilder[PeopleLocation, A]
                              ): SelectionBuilder[Searchable, List[A]] =
       _root_.caliban.client.SelectionBuilder.Field("operationLocations", ListOf(Obj(innerSelection)))
+
     def peopleLocations[A](
                                innerSelection: SelectionBuilder[PeopleLocation, A]
                              ): SelectionBuilder[Searchable, List[A]] =
@@ -88,6 +91,12 @@ object PeopleClient {
     )(implicit encoder0: ArgEncoder[Option[String]]): SelectionBuilder[_root_.caliban.client.Operations.RootQuery, A] =
       _root_.caliban.client.SelectionBuilder
         .Field("allPeople", Obj(innerSelection), arguments = List(Argument("id", searchTerm, "String")(encoder0)))
+
+    def search2[A](searchTerm: Option[String] = None)(
+      innerSelection: SelectionBuilder[Searchable, A]
+    )(implicit encoder0: ArgEncoder[Option[String]]): SelectionBuilder[_root_.caliban.client.Operations.RootQuery, A] =
+      _root_.caliban.client.SelectionBuilder
+        .Field("person", Obj(innerSelection), arguments = List(Argument("id", searchTerm, "String")(encoder0)))
 
     def get[A](searchTerm: Option[String] = None)(
       innerSelection: SelectionBuilder[Searchable, A]
