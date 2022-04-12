@@ -20,7 +20,7 @@ object PeopleApp extends App {
         ).mapN(People)
 
     val query =
-      Query.search(Option("1000")) {
+      Query.get(Option("1000")) {
         Searchable.allPeople {
           PeopleAttr.firstName ~
             PeopleAttr.lastName ~

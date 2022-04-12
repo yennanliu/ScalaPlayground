@@ -87,6 +87,13 @@ object PeopleClient {
       innerSelection: SelectionBuilder[Searchable, A]
     )(implicit encoder0: ArgEncoder[Option[String]]): SelectionBuilder[_root_.caliban.client.Operations.RootQuery, A] =
       _root_.caliban.client.SelectionBuilder
-        .Field("search", Obj(innerSelection), arguments = List(Argument("searchTerm", searchTerm, "String")(encoder0)))
+        .Field("allPeople", Obj(innerSelection), arguments = List(Argument("id", searchTerm, "String")(encoder0)))
+
+    def get[A](searchTerm: Option[String] = None)(
+      innerSelection: SelectionBuilder[Searchable, A]
+    )(implicit encoder0: ArgEncoder[Option[String]]): SelectionBuilder[_root_.caliban.client.Operations.RootQuery, A] =
+      _root_.caliban.client.SelectionBuilder
+        .Field("allPeople", Obj(innerSelection))
+
   }
 }
