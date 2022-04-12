@@ -56,8 +56,10 @@ object PeopleClient {
 
   type Searchable
   object Searchable {
-    def allPeople[A](innerSelection: SelectionBuilder[PeopleAttr, A]): SelectionBuilder[Searchable, List[A]] =
-      _root_.caliban.client.SelectionBuilder.Field("stations", ListOf(Obj(innerSelection)))
+    def allPeople[A](
+                      innerSelection: SelectionBuilder[PeopleAttr, A]
+                    ): SelectionBuilder[Searchable, List[A]] =
+      _root_.caliban.client.SelectionBuilder.Field("friends", ListOf(Obj(innerSelection)))
     def operationLocations[A](
                                innerSelection: SelectionBuilder[PeopleLocation, A]
                              ): SelectionBuilder[Searchable, List[A]] =
@@ -71,6 +73,16 @@ object PeopleClient {
   // Query
   type Query = _root_.caliban.client.Operations.RootQuery
   object Query {
+
+    def PeopleWithId[A](id: String)(
+      innerSelection: SelectionBuilder[PeopleAttr, A]
+    )(implicit encoder0: ArgEncoder[String]): SelectionBuilder[_root_.caliban.client.Operations.RootQuery, Option[A]] =
+      _root_.caliban.client.SelectionBuilder.Field(
+        "PeopleWithId",
+        OptionOf(Obj(innerSelection)),
+        arguments = List(Argument("id", id, "String!")(encoder0))
+      )
+
     def search[A](searchTerm: Option[String] = None)(
       innerSelection: SelectionBuilder[Searchable, A]
     )(implicit encoder0: ArgEncoder[Option[String]]): SelectionBuilder[_root_.caliban.client.Operations.RootQuery, A] =

@@ -20,7 +20,7 @@ object PeopleApp extends App {
         ).mapN(People)
 
     val query =
-      Query.search(Some("Berlin Ostbahnhof")) {
+      Query.search(Option("1000")) {
         Searchable.allPeople {
           PeopleAttr.firstName ~
             PeopleAttr.lastName ~
@@ -29,6 +29,8 @@ object PeopleApp extends App {
       }
 
     val uri = uri"http://localhost:8080/graphql"
+
+    println(">>> query = " + query.toString)
 
     send(query.toRequest(uri))
       .map(_.body)
