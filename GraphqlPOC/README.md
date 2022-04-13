@@ -31,6 +31,14 @@ http://localhost:8080/graphql
 # -H "Content-Type: application/json" \
 # --data '{ "query": "{  person (id:1001){ id fullName } " }' \
 # http://localhost:8080/graphql
+
+# example 4 : get graphql schema
+# https://medium.com/@mrthankyou/how-to-get-a-graphql-schema-28915025de0e#:~:text=How%20To%20Get%20The%20Schema%20%E2%80%94%20Introspection%20Queries,called%20a%20GraphQL%20introspection%20query.
+curl 'http://localhost:8080/graphql' \
+-H 'Content-Type: application/json' \
+-H 'Accept: application/json' \
+--compressed \
+--data-binary '{"query":"{\n\t__schema{\n queryType {\n fields{\n name\n }\n }\n }\n}"}'
 ```
 
 ## Concept
