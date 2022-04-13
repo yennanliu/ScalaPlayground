@@ -1,0 +1,8 @@
+type Person {
+    id: ID!
+    firstName: String
+    lastName: String
+    fullName: String
+    email: String
+    friends: [Person]
+}

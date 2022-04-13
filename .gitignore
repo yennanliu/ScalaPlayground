@@ -69,3 +69,4 @@ GraphqlPOC/target/streams/
 GraphqlPOC/target/scala-2.12
 GraphqlPOC/target/.history
 GraphqlPOC/project/target
+GraphqlPOC/project/target/*

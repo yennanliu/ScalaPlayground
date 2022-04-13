@@ -14,7 +14,10 @@ lazy val versions = new {
 
 val calibanVersion = "1.4.0"
 
+enablePlugins(CalibanPlugin)
+
 libraryDependencies ++= Seq(
+
   // config
   "com.typesafe" % "config" % "1.2.1",
 

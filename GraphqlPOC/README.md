@@ -41,6 +41,13 @@ curl 'http://localhost:8080/graphql' \
 --data-binary '{"query":"{\n\t__schema{\n queryType {\n fields{\n name\n }\n }\n }\n}"}'
 ```
 
+## Genrate caliban client code
+```bash
+# https://ghostdogpr.github.io/caliban/docs/client-codegen.html#generation-settings
+sbt
+calibanGenClient project/project/schema2.graphql src/main/scala/com/yen/Caliban/Client.scala --genView true
+```
+
 ## Concept
 We need up to 3 case classes:
 - one for for Queries: it will contain our read-only endpoints, those we express using GET requests in REST
