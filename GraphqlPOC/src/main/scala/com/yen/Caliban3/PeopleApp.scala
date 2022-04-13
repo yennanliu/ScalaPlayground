@@ -12,16 +12,20 @@ object PeopleApp extends App {
 
   override def run(args: List[String]): ZIO[zio.ZEnv, Nothing, ExitCode] = {
 
-    val allPeople =
-      ( com.yen.Caliban3.PeopleClient.allPeople.`type` ~
-        com.yen.Caliban3.PeopleClient.allPeople.`lastName` ~
-        com.yen.Caliban3.PeopleClient.allPeople.`firstName` ~
-        com.yen.Caliban3.PeopleClient.allPeople.`id`
-        ).mapN(People)
+//    val allPeople =
+//      ( com.yen.Caliban3.PeopleClient.allPeople.`type` ~
+//        com.yen.Caliban3.PeopleClient.allPeople.`lastName` ~
+//        com.yen.Caliban3.PeopleClient.allPeople.`firstName` ~
+//        com.yen.Caliban3.PeopleClient.allPeople.`id`
+//        ).mapN(People)
 
     val query =
       Query.search2(Option("1000")) {
-        Searchable.allPeople {
+//        Searchable.person(
+//          PeopleAttr.lastName ~
+//            PeopleAttr.id
+//        )
+        Searchable.person {
           PeopleAttr.firstName ~
             PeopleAttr.lastName ~
             PeopleAttr.id

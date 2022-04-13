@@ -1,8 +1,12 @@
-type Person {
+type person {
     id: ID!
     firstName: String
     lastName: String
     fullName: String
     email: String
-    friends: [Person]
+    friends: [person]
+}
+
+type Query {
+    allPeople: [person!]!
 }

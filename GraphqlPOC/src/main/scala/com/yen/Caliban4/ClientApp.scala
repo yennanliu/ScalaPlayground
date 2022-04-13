@@ -1,44 +1,33 @@
 package com.yen.Caliban4
 
+import caliban.client.Operations.RootQuery
+import caliban.client.SelectionBuilder
 import sttp.client3._
 import sttp.client3.asynchttpclient.zio.{AsyncHttpClientZioBackend, send}
 import zio.{App, ExitCode, ZIO}
-
 import com.yen.Caliban4.Client._
 
 object ClientApp extends App {
 
-  case class Train(`type`: String, platform: String, trainNumber: String, time: String, stops: List[String])
+  //case class person(`type`: String, id: String, firstName: String, lastName: String, email: List[String])
 
   override def run(args: List[String]): ZIO[zio.ZEnv, Nothing, ExitCode] = {
 
-    //    val allPeople =
-    //      (Person.fullName ~
-    //        Person.firstName ~
-    //        Person.lastName ~
-    //        Person.email).mapN(Person)
-
-//    val query =
-//      Query.search2(Option("1000")) {
-//        Searchable.person {
+//        val allPeople =
+//          ( Person.fullName ~
 //            Person.firstName ~
 //            Person.lastName ~
-//            Person.id
-//        }
-//      }
+//            Person.email).mapN(person)
 
     val query =
-      Query.get() {
-        Searchable.friends {
-          Person.firstName ~
-            Person.lastName ~
-            Person.id
-        }
+      Query.allPeople {
+        person.id ~
+          person.lastName
       }
 
     val uri = uri"http://localhost:8080/graphql"
 
-    println(">>> query = " + query.toString)
+    println(">>> query = " + query.toGraphQL().toString)
 
     send(query.toRequest(uri))
       .map(_.body)

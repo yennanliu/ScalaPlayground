@@ -49,7 +49,7 @@ object PeopleClient {
   }
 
   type PeopleLocation
-  object OperationLocation {
+  object PeopleLocation {
     def id: SelectionBuilder[PeopleLocation, Option[String]] =
       _root_.caliban.client.SelectionBuilder.Field("id", OptionOf(Scalar()))
   }
@@ -61,6 +61,11 @@ object PeopleClient {
                       innerSelection: SelectionBuilder[PeopleAttr, A]
                     ): SelectionBuilder[Searchable, List[A]] =
       _root_.caliban.client.SelectionBuilder.Field("allPeople", ListOf(Obj(innerSelection)))
+
+    def person[A](
+                      innerSelection: SelectionBuilder[PeopleAttr, A]
+                    ): SelectionBuilder[Searchable, List[A]] =
+      _root_.caliban.client.SelectionBuilder.Field("person", ListOf(Obj(innerSelection)))
 
     def operationLocations[A](
                                innerSelection: SelectionBuilder[PeopleLocation, A]
@@ -81,7 +86,7 @@ object PeopleClient {
       innerSelection: SelectionBuilder[PeopleAttr, A]
     )(implicit encoder0: ArgEncoder[String]): SelectionBuilder[_root_.caliban.client.Operations.RootQuery, Option[A]] =
       _root_.caliban.client.SelectionBuilder.Field(
-        "PeopleWithId",
+        "person",
         OptionOf(Obj(innerSelection)),
         arguments = List(Argument("id", id, "String!")(encoder0))
       )
@@ -90,13 +95,13 @@ object PeopleClient {
       innerSelection: SelectionBuilder[Searchable, A]
     )(implicit encoder0: ArgEncoder[Option[String]]): SelectionBuilder[_root_.caliban.client.Operations.RootQuery, A] =
       _root_.caliban.client.SelectionBuilder
-        .Field("allPeople", Obj(innerSelection), arguments = List(Argument("id", searchTerm, "String")(encoder0)))
+        .Field("person", Obj(innerSelection), arguments = List(Argument("id", searchTerm, "String")(encoder0)))
 
     def search2[A](searchTerm: Option[String] = None)(
       innerSelection: SelectionBuilder[Searchable, A]
     )(implicit encoder0: ArgEncoder[Option[String]]): SelectionBuilder[_root_.caliban.client.Operations.RootQuery, A] =
       _root_.caliban.client.SelectionBuilder
-        .Field("person", Obj(innerSelection), arguments = List(Argument("id", searchTerm, "String")(encoder0)))
+        .Field("id", Obj(innerSelection), arguments = List(Argument("id", searchTerm, "String")(encoder0)))
 
     def get[A](searchTerm: Option[String] = None)(
       innerSelection: SelectionBuilder[Searchable, A]
