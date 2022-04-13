@@ -48,5 +48,54 @@ object Client {
         .Field("friends", OptionOf(ListOf(OptionOf(Obj(innerSelection)))))
   }
 
+  type Searchable
+  object Searchable {
+
+    def allPeople[A](
+                      innerSelection: SelectionBuilder[Person, A]
+                    ): SelectionBuilder[Searchable, List[A]] =
+      _root_.caliban.client.SelectionBuilder.Field("allPeople", ListOf(Obj(innerSelection)))
+
+    def friends[A](
+                   innerSelection: SelectionBuilder[Person, A]
+                 ): SelectionBuilder[Searchable, List[A]] =
+      _root_.caliban.client.SelectionBuilder.Field("friends", ListOf(Obj(innerSelection)))
+
+  }
+
+  // Query
+  type Query = _root_.caliban.client.Operations.RootQuery
+  object Query {
+
+    def PeopleWithId[A](id: String)(
+      innerSelection: SelectionBuilder[Person, A]
+    )(implicit encoder0: ArgEncoder[String]): SelectionBuilder[_root_.caliban.client.Operations.RootQuery, Option[A]] =
+      _root_.caliban.client.SelectionBuilder.Field(
+        "person",
+        OptionOf(Obj(innerSelection)),
+        arguments = List(Argument("id", id, "String!")(encoder0))
+      )
+
+    def search[A](searchTerm: Option[String] = None)(
+      innerSelection: SelectionBuilder[Searchable, A]
+    )(implicit encoder0: ArgEncoder[Option[String]]): SelectionBuilder[_root_.caliban.client.Operations.RootQuery, A] =
+      _root_.caliban.client.SelectionBuilder
+        .Field("person", Obj(innerSelection), arguments = List(Argument("id", searchTerm, "String")(encoder0)))
+
+    def search2[A](searchTerm: Option[String] = None)(
+      innerSelection: SelectionBuilder[Searchable, A]
+    )(implicit encoder0: ArgEncoder[Option[String]]): SelectionBuilder[_root_.caliban.client.Operations.RootQuery, A] =
+      _root_.caliban.client.SelectionBuilder
+        .Field("id", Obj(innerSelection), arguments = List(Argument("id", searchTerm, "String")(encoder0)))
+
+    def get[A](searchTerm: Option[String] = None)(
+      innerSelection: SelectionBuilder[Searchable, A]
+    )(implicit encoder0: ArgEncoder[Option[String]]): SelectionBuilder[_root_.caliban.client.Operations.RootQuery, A] =
+      _root_.caliban.client.SelectionBuilder
+        .Field("allPeople", Obj(innerSelection))
+
+  }
+
+
 }
 
