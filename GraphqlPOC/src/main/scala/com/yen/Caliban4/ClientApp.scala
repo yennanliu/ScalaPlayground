@@ -19,10 +19,22 @@ object ClientApp extends App {
 //            Person.lastName ~
 //            Person.email).mapN(person)
 
+//    val query =
+//      Query.allPeople {
+//        person.id ~
+//        person.lastName
+//      }
+
     val query =
       Query.allPeople {
         person.id ~
-          person.lastName
+        person.lastName ~
+        person.firstName ~
+        person.friends(
+          person.id ~
+            person.lastName ~
+            person.firstName
+        )
       }
 
     val uri = uri"http://localhost:8080/graphql"
