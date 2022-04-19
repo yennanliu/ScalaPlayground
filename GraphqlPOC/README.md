@@ -45,7 +45,7 @@ curl 'http://localhost:8080/graphql' \
 ```bash
 # https://ghostdogpr.github.io/caliban/docs/client-codegen.html#generation-settings
 sbt
-calibanGenClient project/project/schema2.graphql src/main/scala/com/yen/Caliban/Client.scala --genView true
+calibanGenClient project/project/schema2.graphql src/main/scala/com/yen/Caliban4/Client.scala --genView true
 ```
 
 ## Concept
@@ -80,3 +80,7 @@ We need up to 3 case classes:
 		- https://dev.classmethod.jp/articles/sangria-akka-http-1/
 			- code
 				- https://github.com/katainaka0503/hello-sangria
+	- t3
+		- https://www.youtube.com/watch?v=lgxUKsOH65k
+- caliban client projects
+	- https://github.com/askmrsinh/typed-ghgraphql
