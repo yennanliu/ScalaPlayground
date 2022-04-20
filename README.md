@@ -44,5 +44,4 @@ sbt new scala/scala-seed.g8 -o app
 	- Intro
 		- https://www.baeldung.com/scala/category/play-framework
 		- https://www.playframework.com/
-
 </details>
